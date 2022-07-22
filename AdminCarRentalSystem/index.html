@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title> Easy Car Rental System </title>
+        <link href="assests/css/style.css" rel="stylesheet">
+        <link href="assests/css/bootstrap.css" rel="stylesheet">
+        <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+<body onload="navigateTODashboard()">
+<header class="header">
+    <div>
+        <img src="assests/img/android-auto.png" alt="brand">
+    </div>
+    <h1>Easy Car Rental Dashboard</h1>
+</header>
+<main>
+    <section class="side-panel-container">
+
+        <section class="side-panel-top">
+            <ul>
+                <img src="assests/icons/dashboard.png" class="dash-png">
+                <img src="assests/icons/protection.png" class="car-png">
+                <img src="assests/icons/user.png" class="customer-png">
+                <img src="assests/icons/user.png" class="rental-png">
+                <img src="assests/icons/income.png" class="Income-png">
+            </ul>
+        </section>
+
+        <aside>
+            <p> Admin </p>
+            <a class="btndashboard" id="btndashboard" onclick='navigateTODashboard();'>
+                <i class="fa fa-user-o" aria-hidden="true">
+                </i>
+                Dashboard
+            </a>
+
+            <a href="javascript:manageCars();" id="btncar" onclick="manageCars()">
+                <i class="fa fa-laptop" aria-hidden="true"></i>
+                Manage Cars
+            </a>
+
+            <a id="btncustomer">
+                <i class="fa fa-clone" aria-hidden="true"></i>
+                Manage Customer
+            </a>
+
+            <a id="btnrental">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                Rental Request
+            </a>
+
+            <a  id="btnincome">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Income
+            </a>
+        </aside>
+    </section>
+
+    <!--DashBoard Content-->
+    <section class="main-dashboard-container">
+        <section class="admin-dashboard-container">
+            <section>
+                <div class="dashboard-users">
+                    <div>
+                        <img src="assests/icons/user.png">
+                    </div>
+                    <h1 id="registeredUsers"></h1>
+                    <p class="fs-5">Registered Users</p>
+                </div>
+
+                <div class="dashboard-bookings">
+                    <div>
+                        <img src="assests/icons/user.png">
+                    </div>
+                    <h1 id="totalBookings"></h1>
+                    <p class="fs-5">Total Bookings Requests</p>
+                </div>
+
+                <div class="dashboard-active-bookings">
+                    <div>
+                        <img src="assests/icons/user.png">
+                    </div>
+                    <h1 id="activeBookings"></h1>
+                    <p class="fs-5">Active Bookings Requests</p>
+                </div>
+
+                <div class="dashboard-available-cars">
+                    <div>
+                        <img src="assests/icons/protection.png">
+                    </div>
+                    <h1 id="availableCars"></h1>
+                    <p class="fs-5">Available Cars</p>
+                </div>
+
+                <div class="dashboard-reserved-cars">
+                    <div>
+                        <img src="assests/icons/protection.png">
+                    </div>
+                    <h1 id="reservedCars"></h1>
+                    <p class="fs-5">Reserved Cars</p>
+                </div>
+
+                <div class="dashboard-maintain-cars">
+                    <div>
+                        <img src="assests/icons/protection.png">
+                    </div>
+                    <h1 id="carsNeedMaintenance"></h1>
+                    <p class="fs-5" style="text-align: right">Cars<br> Need Maintenance</p>
+                </div>
+
+                <div class="dashboard-available-drivers">
+                    <div>
+                        <img src="assests/icons/user.png">
+                    </div>
+                    <h1 id="availableDrivers"></h1>
+                    <p class="fs-5">Available Drivers</p>
+                </div>
+
+                <div class="dashboard-reserved-drivers">
+                    <div>
+                        <img src="assests/icons/user.png">
+                    </div>
+                    <h1 id="occupiedDrivers"></h1>
+                    <p class="fs-5">Reserved Drivers</p>
+                </div>
+
+                <div class="dashboard-under-maintainance-cars">
+                    <div>
+                        <img src="assests/icons/protection.png">
+                    </div>
+                    <h1 id="carsUnderMaintenance"></h1>
+                    <p class="fs-5" style="text-align: right">Cars<br> Under Maintenance</p>
+                </div>
+
+            </section>
+        </section>
+
+    </section>
+
+    <script src="assests/js/main.js"></script>
+    <script src="assests/js/bootstrap.min.js"></script>
+    <script src="assests/js/jquery-3.6.0.min.js"></script>
+
+</main>
+
+
+</head>
+
+
+</body>
+</html>
