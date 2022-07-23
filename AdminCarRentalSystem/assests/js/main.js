@@ -14,6 +14,11 @@ function manageRentals() {
     $('.rental-container').css({display: "block"});
 }
 
+function manageIncome() {
+    $('.main-dashboard-container>section').css({display: "none"});
+    $('.income-container').css({display: "block"});
+}
+
 function navigateTODashboard() {
     $('.main').css({display: "none"});
     $('.header').css({display: "none"});
@@ -32,6 +37,7 @@ function loadDashboard() {
     $('.cars-container').css({display: "none"});
     $('.view-customers-container').css({display: "none"});
     $('.rental-container').css({display: "none"});
+    $('.income-container').css({display: "none"});
 }
 
 function selectUserRole() {
@@ -96,4 +102,14 @@ function viewRequestsForPayment() {
     $('.view-rentals').css({display: "none"});
     // $('.rental-container').css({display: "none"});
     $('.calculate-payment').css({display: "block"});
+}
+
+function viewWeeklyIncome() {
+    $('.view-week-income').css({display: "block"});
+    $('.view-month-income').css({display: "none"});
+}
+
+function viewMonthlyIncome() {
+    $('.view-week-income').css({display: "none"});
+    $('.view-month-income').css({display: "block"});
 }

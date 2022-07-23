@@ -98,7 +98,7 @@
                 Rental Request
             </a>
 
-            <a  id="btnincome" onclick="switchToIncome()">
+            <a  id="btnincome" onclick="manageIncome()">
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                 Income
             </a>
@@ -521,6 +521,101 @@
 
             </section>
 
+        </section>
+
+        <!--===================================== INCOME SECTION ==================================-->
+        <section class="income-container">
+            <section class="income-container-header">
+                <div>
+
+                    <button onclick="viewWeeklyIncome()" type="button" class="btnWeeklyIncome" id="weekIncome">Week Income
+                    </button>
+                    &nbsp
+                    <button onclick="viewMonthlyIncome()" type="button" class="btnMonthlyIncome" id="monthIncome">
+                        Monthly Income
+                    </button>
+                </div>
+            </section>
+
+            <section class="view-week-income" style="overflow-y: scroll; overflow-x: scroll;margin-top: 30px">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="txtBrand">From Date</label>
+                        <input type="date" id="fromDate" class="form-control">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="txtBrand">To Date</label>
+                        <input type="date" id="toDate" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <table class="table table-bordered table-hover" style="margin-top: 30px">
+                    <thead class="table-dark">
+                    <th>Rent ID</th>
+                    <th>Customer Name</th>
+                    <th>Customerr NIC</th>
+                    <th>Pickup Date</th>
+                    <th>Return Date</th>
+                    <th>Pickup Venue</th>
+                    <th>Return Venue</th>
+                    <th>Pickup Time</th>
+                    <th>Return Time</th>
+                    <th>Driver IDs</th>
+                    <th>Driver Names</th>
+                    <th>Car Id</th>
+                    <th>Car Reg No's</th>
+                    <th>Payment Done By</th>
+                    <th>Payment Date</th>
+                    <th>Amount</th>
+                    </thead>
+                    <tbody id="viewRentalsTable">
+
+
+                    </tbody>
+                </table>
+
+
+            </section>
+
+            <section class="view-month-income" style="overflow-y: scroll; overflow-x: scroll;margin-top: 30px">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="txtBrand">From Date</label>
+                        <input type="date" id="fromDate" class="form-control">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="txtBrand">To Date</label>
+                        <input type="date" id="toDate" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <table class="table table-bordered table-hover" style="margin-top: 30px">
+                    <thead class="table-dark">
+                    <th>Rent ID</th>
+                    <th>Customer Name</th>
+                    <th>Customerr NIC</th>
+                    <th>Pickup Date</th>
+                    <th>Return Date</th>
+                    <th>Pickup Venue</th>
+                    <th>Return Venue</th>
+                    <th>Pickup Time</th>
+                    <th>Return Time</th>
+                    <th>Driver IDs</th>
+                    <th>Driver Names</th>
+                    <th>Car Id</th>
+                    <th>Car Reg No's</th>
+                    <th>Payment Done By</th>
+                    <th>Payment Date</th>
+                    <th>Amount</th>
+                    </thead>
+                    <tbody id="viewRentalsTable">
+
+
+                    </tbody>
+                </table>
+
+
+            </section>
         </section>
     </section>
 
