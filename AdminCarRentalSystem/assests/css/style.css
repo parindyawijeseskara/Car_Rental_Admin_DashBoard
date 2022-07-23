@@ -2,7 +2,6 @@ body {
     margin:0;
     color:#edf3ff;
     background:#c8c8c8;
-    background:url(https://hdqwalls.com/download/material-design-4k-2048x1152.jpg) fixed;
     background-size: cover;
     font:600 16px/18px 'Open Sans',sans-serif;
 }
@@ -53,7 +52,7 @@ a{color:inherit;text-decoration:none}
     text-transform:uppercase;
 }
 .login-html .tab{
-    font-size:22px;
+    /*font-size:22px;*/
     margin-right:15px;
     padding-bottom:5px;
     margin:0 15px 10px 0;
@@ -166,8 +165,6 @@ a{color:inherit;text-decoration:none}
 
 
 
-
-/*hddddddddddddd*/
 .header {
     width: 100vw;
     height: 60px;
@@ -182,11 +179,11 @@ a{color:inherit;text-decoration:none}
     color: white;
     font-size: 28px;
     top: 12px;
-    left: 20px;
+    left: 50px;
 }
 
 .header > div {
-    position: relative;
+    position: fixed;
     top: 12px;
     left: 6px;
 }
@@ -200,22 +197,21 @@ aside {
     width: 250px;
     padding-left: 33px;
     height: 100vh;
-    background-image: linear-gradient(to bottom , #dc3545, #dc3545);
+    background-image: linear-gradient(to bottom , #249876, #249876);
     border-top-right-radius: 80px;
     position: fixed;
     top: 63px;
-    font-family: Quicksand;
     transition: 0.5s;
     left: -200px;
     text-decoration: none;
     cursor: pointer;
 }
 
-.side-panel-top {
+.side-panel-top-admin {
     color: #fff;
     height: 100vh;
     width: 50px;
-    background-image: linear-gradient(to bottom , #dc3545,#dc3545);
+    background-image: linear-gradient(to bottom , #2498765,#249876);
     position: fixed;
     left: 0;
     z-index: 3;
@@ -223,7 +219,7 @@ aside {
     border-top-right-radius: 50px;
 }
 
-.side-panel-top:hover + aside {
+.side-panel-top-admin:hover + aside {
     left: 0;
     transition: 0.5s;
 }
@@ -233,20 +229,25 @@ aside:hover{
     transition: 0.5s;
 }
 
+
+
 .dash-png{
     width: 35px;
     position: absolute;
     top: 123px;
     left: 8px;
 }
+
 .car-png{
     width: 40px;
+    /* background: white; */
     position: absolute;
     top: 171px;
     left: 6px;
 }
 .customer-png{
     width: 34px;
+    /* background: white; */
     position: absolute;
     top: 223px;
     left: 8px;
@@ -295,7 +296,6 @@ aside a:hover {
 
 aside a i {
     margin-right: 15px;
-    /*margin-left: 10px;*/
 }
 
 aside a:hover::after {
@@ -312,6 +312,7 @@ aside a:hover::after {
 }
 
 aside a:hover::before {
+    /*content: "";*/
     position: absolute;
     background-color: transparent;
     top: 51px;
@@ -324,7 +325,6 @@ aside a:hover::before {
 }
 
 aside p {
-    font-family: Quicksand;
     font-size: 38px;
     margin: 27px;
     padding: 2px 0;
@@ -336,17 +336,17 @@ aside p {
     background: white;
     position: absolute;
     top: 64px;
-    left: 18px;
+    left: 108px;
     z-index: -1;
 }
 
-/*DashBoard Content*/
+/*Dashboard Content*/
 
 .dashboard-users{
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 35px;
     left: 308px;
@@ -358,7 +358,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 35px;
     left: 710px;
@@ -370,7 +370,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 35px;
     left: 1113px;
@@ -382,7 +382,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 235px;
     left: 308px;
@@ -394,7 +394,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 235px;
     left: 710px;
@@ -406,7 +406,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 235px;
     left: 1113px;
@@ -418,7 +418,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background:#dc3545;
+    background:#249876;
     position: absolute;
     top: 435px;
     left: 308px;
@@ -430,7 +430,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 435px;
     left: 710px;
@@ -442,7 +442,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #dc3545;
+    background: #249876;
     position: absolute;
     top: 435px;
     left: 1113px;
@@ -566,6 +566,7 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+
     color: white;
 }
 
@@ -638,4 +639,144 @@ aside p {
     top: 102px;
     left: 23px;
 }
+
+/**Manage Cars**/
+.manage-cars-option-footer {
+    width: 1185px;
+    background-color: gainsboro;
+    height: 100px;
+    position: absolute;
+    right: -30px;
+    top: 11px;
+    left: 22px;
+    margin: auto;
+    border-radius: 4px;
+    z-index: 0;
+    box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+
+}
+
+.btnaddCar{
+    width: 148px;
+    height: 63px;
+    border: none;
+    color: white;
+    background-color: #02B1DB;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #313131;
+    transition: ease-out 0.3s;
+    font-size: 19px;
+    outline: none;
+    position: absolute;
+    top: 9px;
+    left: 7px;
+}
+
+.btnaddCar:hover{
+    box-shadow: inset 150px 0 0 0 #313131;
+    cursor: pointer;
+    color: #02B1DB;
+}
+
+.btnviewCars{
+    width: 148px;
+    height: 63px;
+    border: none;
+    color: white;
+    background-color: #02B1DB;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #313131;
+    transition: ease-out 0.3s;
+    font-size: 19px;
+    outline: none;
+    position: absolute;
+    top: 9px;
+    left: 175px;
+}
+
+.btnviewCars:hover{
+    box-shadow: inset 150px 0 0 0 #313131;
+    cursor: pointer;
+    color: #02B1DB;
+}
+
+.btneditCar{
+    width: 148px;
+    height: 63px;
+    border: none;
+    color: white;
+    background-color: #02B1DB;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #313131;
+    transition: ease-out 0.3s;
+    font-size: 19px;
+    outline: none;
+    position: absolute;
+    top: 9px;
+    left: 344px;
+}
+
+.btneditCar:hover{
+    box-shadow: inset 150px 0 0 0 #313131;
+    cursor: pointer;
+    color: #02B1DB;
+}
+
+.manage-cars-option-container {
+    width: 1200px;
+    height: 450px;
+    position: absolute;
+    right: 0px;
+    top: 142px;
+    left: 0;
+    margin: auto;
+    border-radius: 4px;
+}
+
+/**Add Cars*/
+
+.add-car {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+}
+
+/**View Cars*/
+
+.view-cars {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+    display: none;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    position: absolute;
+    top: 136px;
+    left: 63px;
+}
+
+#tblViewCars img:hover{
+    transform: scale(1.5);
+}
+
+/**Edit Cars*/
+
+
+.edit-cars {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+    display: none;
+    position: absolute;
+    top: 145px;
+    left: 65px;
+}
+
+#tblEditCars img:hover{
+    transform: scale(1.5);
+}
+
 

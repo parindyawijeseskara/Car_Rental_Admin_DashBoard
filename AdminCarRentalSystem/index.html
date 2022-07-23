@@ -8,6 +8,7 @@
         <link href="assests/css/bootstrap.css" rel="stylesheet">
         <link href="assests/css/bootstrap.min.css" rel="stylesheet">
     </head>
+
 <body onload="navigateTODashboard()">
 <header class="header">
     <div>
@@ -15,67 +16,54 @@
     </div>
     <h1>Easy Car Rental Dashboard</h1>
 </header>
-<main>
 
-    <div class="login-wrap" style="margin-top: 50px">
-        <div class="login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-            <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
-            <div class="login-form" style="margin-top: 50px">
-                <div class="sign-in-htm">
-                    <div class="group">
-                        <label for="user" class="label">Username or Email</label>
-                        <input id="user" type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                        <label for="type" class="label">User Type</label>
-                        <select id="type" class="form-select">
-                            <option value="admin">Admin</option>
-                            <option value="customer">Customer</option>
-                            <option value="driver">Driver</option>
-                        </select>
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign In">
-                    </div>
-                    <div class="hr"></div>
+<!--Login Form Content-->
+<div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
+        <div class="login-form" style="margin-top: 50px">
+            <div class="sign-in-htm">
+                <div class="group">
+                    <label for="user" class="label">Username or Email</label>
+                    <input id="user" type="text" class="input">
                 </div>
-                <div class="for-pwd-htm">
-                    <div class="group">
-                        <label for="user" class="label">Username or Email</label>
-                        <input id="user" type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Reset Password">
-                    </div>
-                    <div class="hr"></div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" data-type="password">
                 </div>
+                <div class="group">
+                    <label for="type" class="label">User Type</label>
+                    <select onchange="selectUserRole()" id="type" class="form-select">
+                        <option value="admin">Admin</option>
+                        <option value="customer">Customer</option>
+                        <option value="driver">Driver</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <input onclick="login()" type="submit" class="button" value="Sign In">
+                </div>
+                <div class="hr"></div>
+            </div>
+            <div class="for-pwd-htm">
+                <div class="group">
+                    <label for="user" class="label">Username or Email</label>
+                    <input id="user" type="text" class="input">
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Reset Password">
+                </div>
+                <div class="hr"></div>
             </div>
         </div>
     </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--DashBoardContent-->
+<main class="main">
     <section class="side-panel-container">
-
-        <section class="side-panel-top">
+        <!--Admin side panel content-->
+        <section class="side-panel-top-admin">
             <ul>
                 <img src="assests/icons/dashboard.png" class="dash-png">
                 <img src="assests/icons/protection.png" class="car-png">
@@ -85,9 +73,10 @@
             </ul>
         </section>
 
-        <aside>
+        <!--Admin DashBoardForm Content-->
+        <aside class="admin-dashboard">
             <p> Admin </p>
-            <a class="btndashboard" id="btndashboard" onclick='navigateTODashboard();'>
+            <a class="btndashboard" id="btndashboard" onclick='loadDashboard();'>
                 <i class="fa fa-user-o" aria-hidden="true">
                 </i>
                 Dashboard
@@ -98,27 +87,27 @@
                 Manage Cars
             </a>
 
-            <a id="btncustomer">
+            <a id="btncustomer" onclick="switchToCustomer()">
                 <i class="fa fa-clone" aria-hidden="true"></i>
                 Manage Customer
             </a>
 
-            <a id="btnrental">
+            <a id="btnrental" onclick="switchToRental()">
                 <i class="fa fa-star-o" aria-hidden="true"></i>
                 Rental Request
             </a>
 
-            <a  id="btnincome">
+            <a  id="btnincome" onclick="switchToIncome()">
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                 Income
             </a>
         </aside>
     </section>
 
-    <!--DashBoard Content-->
+    <!--Main DashBoard Content-->
     <section class="main-dashboard-container">
         <section class="admin-dashboard-container">
-            <section>
+            <section >
                 <div class="dashboard-users">
                     <div>
                         <img src="assests/icons/user.png">
@@ -194,6 +183,219 @@
             </section>
         </section>
 
+        <!--Manage Car Content-->
+        <section class="cars-container">
+
+            <!--Add new Car content-->
+            <section class="manage-cars-option-container">
+
+                <section class="add-car container-fluid">
+                    <form enctype="multipart/form-data" >
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtRegistrationNo">Registration No</label>
+                                <input type="text" id="txtRegistrationNo" class="form-control" name="id">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtBrand">Brand</label>
+                                <input type="text" id="txtBrand" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="cmbType">Type</label>
+                                <select id="cmbType" class="form-select">
+                                    <option>General</option>
+                                    <option>Premium</option>
+                                    <option>Luxury</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="form-label" for="frontImg">Front Image</label>
+                                <input class="form-control" type="file" id="frontImg" name="file">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="form-label" for="backImg">Back Image</label>
+                                <input class="form-control" type="file" id="backImg">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="form-label" for="sideImg">Side Image</label>
+                                <input class="form-control" type="file" id="sideImg">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="form-label" for="interiorImg">Interior Image</label>
+                                <input class="form-control" type="file" id="interiorImg">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="cmbNoOfPassengers">No Of Passengers</label>
+                                <select id="cmbNoOfPassengers" class="form-select">
+                                    <option>2</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="cmbTransmissionType">Transmission Type</label>
+                                <select id="cmbTransmissionType" class="form-select">
+                                    <option>Auto</option>
+                                    <option>Manual</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="cmbFuelType">Fuel Type</label>
+                                <select id="cmbFuelType" class="form-select">
+                                    <option>Diesel</option>
+                                    <option>Petrol</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtColor">Color</label>
+                                <input type="text" class="form-control" id="txtColor">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtDailyPriceIncrement">Daily Rate</label>
+                                <input type="number" class="form-control" id="txtDailyPriceIncrement">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtMonthlyPriceIncrement">Monthly Rate</label>
+                                <input type="number" class="form-control" id="txtMonthlyPriceIncrement">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtFreeMileagePerDay">Free Mileage /Day</label>
+                                <input type="number" class="form-control" id="txtFreeMileagePerDay">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtFreeMileagePerMonth">Free Mileage /Month</label>
+                                <input type="number" class="form-control" id="txtFreeMileagePerMonth">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtPricePerKm">Price Per KM</label>
+                                <input type="number" class="form-control" id="txtPricePerKm">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtKmMeterValue">KM Meter Value</label>
+                                <input type="number" class="form-control" id="txtKmMeterValue">
+                            </div>
+
+                            <div class="col-lg-6">
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <button type="button" class="btn btn-outline-danger" onclick="addCarToTheLot()">Add Car To
+                                Save
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </section>
+
+            <!--view car content-->
+            <section class="view-cars">
+
+                <table class="table table-success table-hover">
+                    <thead class="table table-dark">
+                    <th>Reg No</th>
+                    <th>Brand</th>
+                    <th>Type</th>
+                    <th>Front Image</th>
+                    <th>Back Image</th>
+                    <th>Side Image</th>
+                    <th>Interior Image</th>
+                    <th>No Of Passengers</th>
+                    <th>Transmission</th>
+                    <th>Fuel Type</th>
+                    <th>Color</th>
+                    <th>Daily Rate</th>
+                    <th>Monthly Rate</th>
+                    <th>Free Mileage Per Day</th>
+                    <th>Free Mileage Per Month</th>
+                    <th>Price /Km</th>
+                    <th>KM Meter Value</th>
+                    <th>Available</th>
+                    <th>Damaged</th>
+                    <th>Under Maintenance</th>
+
+                    </thead>
+                    <tbody id="tblViewCars">
+
+                    </tbody>
+                </table>
+
+            </section>
+
+            <!--Update car content-->
+            <section class="edit-cars" style="overflow-x: scroll; overflow-y: scroll">
+
+                <table class="table table-success table-hover">
+                    <thead class="table table-dark">
+                    <th>Reg No</th>
+                    <th>Front</th>
+                    <th>Back</th>
+                    <th>Side</th>
+                    <th>Interior</th>
+                    <th>Color</th>
+                    <th>Daily Rate</th>
+                    <th>Monthly Rate</th>
+                    <th>Free Mileage Per Day</th>
+                    <th>Free Mileage Per Month</th>
+                    <th>Price /Km</th>
+                    <th>Edit</th>
+                    <th>Mark Damaged</th>
+                    <th>Add To Maintenance/<br>Mark Repaired</th>
+                    <th>Remove</th>
+                    </thead>
+                    <tbody id="tblEditCars">
+
+                    </tbody>
+                </table>
+
+            </section>
+
+            <section class="manage-cars-option-footer" >
+                <div>
+
+                    <button type="button" onclick="loadNewCarSection()"  class="btnaddCar" id="addCar">Add New Car</button>
+                    &nbsp
+                    <button type="button" onclick="loadViewCarSection()" class="btnviewCars" id="viewCars">View Car Details</button>
+                    &nbsp
+                    <button type="button" onclick="loadEditCarSection()" class="btneditCar" id="editCar">Edit Car Details</button>
+                </div>
+            </section>
+
+        </section>
     </section>
 
     <script src="assests/js/main.js"></script>
