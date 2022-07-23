@@ -2,6 +2,7 @@ body {
     margin:0;
     color:#edf3ff;
     background:#c8c8c8;
+    /*background:url(https://hdqwalls.com/download/material-design-4k-2048x1152.jpg) fixed;*/
     background-size: cover;
     font:600 16px/18px 'Open Sans',sans-serif;
 }
@@ -176,6 +177,8 @@ a{color:inherit;text-decoration:none}
 
 .header > h1 {
     position: relative;
+    font-family: "Baskerville Old Face";
+    /*font-weight: bold;*/
     color: white;
     font-size: 28px;
     top: 12px;
@@ -201,6 +204,7 @@ aside {
     border-top-right-radius: 80px;
     position: fixed;
     top: 63px;
+    font-family: Quicksand;
     transition: 0.5s;
     left: -200px;
     text-decoration: none;
@@ -211,7 +215,7 @@ aside {
     color: #fff;
     height: 100vh;
     width: 50px;
-    background-image: linear-gradient(to bottom , #2498765,#249876);
+    background-image: linear-gradient(to bottom , #249876,#249876);
     position: fixed;
     left: 0;
     z-index: 3;
@@ -233,6 +237,7 @@ aside:hover{
 
 .dash-png{
     width: 35px;
+    /* background: white; */
     position: absolute;
     top: 123px;
     left: 8px;
@@ -255,12 +260,14 @@ aside:hover{
 
 .rental-png{
     width: 40px;
+    /* background: white; */
     position: absolute;
     top: 270px;
     left: 5px;
 }
 .Income-png{
     width: 43px;
+    /* background: white; */
     position: absolute;
     top: 320px;
     left: 3px;
@@ -296,6 +303,7 @@ aside a:hover {
 
 aside a i {
     margin-right: 15px;
+    /*margin-left: 10px;*/
 }
 
 aside a:hover::after {
@@ -325,6 +333,7 @@ aside a:hover::before {
 }
 
 aside p {
+    font-family: Quicksand;
     font-size: 38px;
     margin: 27px;
     padding: 2px 0;
@@ -340,7 +349,9 @@ aside p {
     z-index: -1;
 }
 
-/*Dashboard Content*/
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////Dashboard/////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .dashboard-users{
     width: 229px;
@@ -461,11 +472,13 @@ aside p {
     position: absolute;
     top: 65px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-users>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 115px;
     left: 34px;
@@ -482,11 +495,13 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-bookings>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 85px;
     left: 45px;
@@ -503,11 +518,13 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-active-bookings>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 85px;
     left: 43px;
@@ -524,11 +541,13 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-available-cars>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 44px;
@@ -545,11 +564,13 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-reserved-cars>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 47px;
@@ -566,12 +587,13 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-maintain-cars>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 100px;
     left: 31px;
@@ -588,11 +610,13 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-available-drivers>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 34px;
@@ -609,11 +633,13 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-reserved-drivers>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 34px;
@@ -630,17 +656,22 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
+    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-under-maintainance-cars>p{
     color: white;
+    font-family: Quicksand;
     position: absolute;
     top: 102px;
     left: 23px;
 }
 
-/**Manage Cars**/
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////// MANAGE CARS /////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+
 .manage-cars-option-footer {
     width: 1185px;
     background-color: gainsboro;
@@ -666,6 +697,8 @@ aside p {
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
+    font-family: Quicksand;
+    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -688,6 +721,8 @@ aside p {
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
+    font-family: Quicksand;
+    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -710,6 +745,8 @@ aside p {
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
+    font-family: Quicksand;
+    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -733,16 +770,17 @@ aside p {
     border-radius: 4px;
 }
 
-/**Add Cars*/
+/*////////////////////////////////Add-Car/////////////////////////////////////////////////*/
 
 .add-car {
     width: 100%;
     height: 100%;
     background-color: white;
     border-radius: 4px;
+    font-family: Quicksand;
 }
 
-/**View Cars*/
+/*////////////////////////////////View-Cars/////////////////////////////////////////////////*/
 
 .view-cars {
     width: 100%;
@@ -761,7 +799,7 @@ aside p {
     transform: scale(1.5);
 }
 
-/**Edit Cars*/
+/*////////////////////////////////Edit-Cars/////////////////////////////////////////////////*/
 
 
 .edit-cars {
@@ -780,3 +818,23 @@ aside p {
 }
 
 
+
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////View-Customers/////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+#tblViewCustomers img:hover{
+    transform: scale(1.5);
+}
+
+.view-customers-container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+    display: none;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    position: absolute;
+    top: 136px;
+    left: 263px;
+}

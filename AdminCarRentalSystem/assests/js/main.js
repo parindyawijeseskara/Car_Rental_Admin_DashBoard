@@ -4,6 +4,11 @@ function manageCars() {
     $('.cars-container').css({display: "block"});
 }
 
+function manageCustomer() {
+    $('.main-dashboard-container>section').css({display: "none"});
+    $('.view-customers-container').css({display: "block"});
+}
+
 function navigateTODashboard() {
     $('.main').css({display: "none"});
     $('.header').css({display: "none"});
@@ -20,6 +25,7 @@ function loadDashboard() {
     $('.login-wrap').css({display: "none"});
     $('.login-html').css({display: "none"});
     $('.cars-container').css({display: "none"});
+    $('.view-customers-container').css({display: "none"});
 }
 
 

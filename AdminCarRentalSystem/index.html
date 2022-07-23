@@ -17,7 +17,7 @@
     <h1>Easy Car Rental Dashboard</h1>
 </header>
 
-<!--Login Form Content-->
+<!--=====================================LOGIN FORM==================================-->
 <div class="login-wrap">
     <div class="login-html">
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -59,10 +59,11 @@
     </div>
 </div>
 
-<!--DashBoardContent-->
+<!--=====================================DASHBOARD FORM==================================-->
 <main class="main">
+    <!--=====================================ADMIN SECTION==================================-->
     <section class="side-panel-container">
-        <!--Admin side panel content-->
+        <!--=====================================ADMIN SIDE PANEL==================================-->
         <section class="side-panel-top-admin">
             <ul>
                 <img src="assests/icons/dashboard.png" class="dash-png">
@@ -73,7 +74,7 @@
             </ul>
         </section>
 
-        <!--Admin DashBoardForm Content-->
+        <!--=====================================ADMIN DASHBOARD FORM==================================-->
         <aside class="admin-dashboard">
             <p> Admin </p>
             <a class="btndashboard" id="btndashboard" onclick='loadDashboard();'>
@@ -87,7 +88,7 @@
                 Manage Cars
             </a>
 
-            <a id="btncustomer" onclick="switchToCustomer()">
+            <a id="btncustomer" onclick="manageCustomer()">
                 <i class="fa fa-clone" aria-hidden="true"></i>
                 Manage Customer
             </a>
@@ -104,8 +105,11 @@
         </aside>
     </section>
 
-    <!--Main DashBoard Content-->
+    <!--=====================================MAIN DASHBOARD SECTION==================================-->
     <section class="main-dashboard-container">
+
+        <!--=====================================MAIN DASHBOARD AREA==================================-->
+
         <section class="admin-dashboard-container">
             <section >
                 <div class="dashboard-users">
@@ -183,10 +187,10 @@
             </section>
         </section>
 
-        <!--Manage Car Content-->
+        <!--=====================================CAR SECTION==================================-->
         <section class="cars-container">
 
-            <!--Add new Car content-->
+            <!--=====================================ADD NEW CAR SECTION==================================-->
             <section class="manage-cars-option-container">
 
                 <section class="add-car container-fluid">
@@ -322,7 +326,7 @@
 
             </section>
 
-            <!--view car content-->
+            <!--=====================================VIEW CAR SECTION==================================-->
             <section class="view-cars">
 
                 <table class="table table-success table-hover">
@@ -356,7 +360,7 @@
 
             </section>
 
-            <!--Update car content-->
+            <!--=====================================EDIT CAR SECTION==================================-->
             <section class="edit-cars" style="overflow-x: scroll; overflow-y: scroll">
 
                 <table class="table table-success table-hover">
@@ -395,6 +399,24 @@
                 </div>
             </section>
 
+        </section>
+
+        <!--===================================== CUSTOMER SECTION ==================================-->
+        <section class="view-customers-container">
+            <table class="table table-success table-hover">
+                <thead class="table table-dark">
+                <th style="width: 30%">Name</th>
+                <th style="width: 10%">NIC</th>
+                <th style="width: 10%">Email</th>
+                <th style="width: 10%">Password</th>
+                <th style="width: 20%">Address</th>
+                <th style="width: 10%">Contact</th>
+                <th style="width: 20%">Verify Details
+                </thead>
+                <tbody id="tblViewCustomers">
+
+                </tbody>
+            </table>
         </section>
     </section>
 
