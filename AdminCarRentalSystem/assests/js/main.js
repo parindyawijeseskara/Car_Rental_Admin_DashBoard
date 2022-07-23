@@ -38,6 +38,14 @@ function loadDashboard() {
     $('.view-customers-container').css({display: "none"});
     $('.rental-container').css({display: "none"});
     $('.income-container').css({display: "none"});
+    $('.customer-manage-profile-section').css({display: "none"});
+    $('.customer-manage-request-section').css({display: "none"});
+    $('.customer-dashboard-container').css({display: "none"});
+    $('.driver-dashboard-container').css({display: "none"});
+    // $('.customer-dashboard-container').css({display: "none"});
+    // $('.side-panel-container-driver').css({display: "none"});
+    // $('.driver-dashboard').css({display: "none"});
+    // $('.driver-dashboard-container').css({display: "none"});
 }
 
 function selectUserRole() {
@@ -55,8 +63,6 @@ function selectUserRole() {
 function  login() {
     $('.main').css({display: "block"});
     $('.header').css({display: "block"});
-    $('.main-dashboard-container>section').css({display: "block"});
-    $('.side-panel-container').css({display: "block"});
     $('.login-wrap').css({display: "none"});
     $('.login-html').css({display: "none"});
     $('.cars-container').css({display: "none"});
@@ -64,12 +70,22 @@ function  login() {
 
     var x = document.getElementById("type").value;
     if (x === "admin"){
+        $('.side-panel-container').css({display: "block"});
         $('.admin-dashboard').css({display: "block"});
+        $('.main-dashboard-container>section').css({display: "block"});
     }
 
     if (x === "customer"){
-        $('.admin-dashboard').css({display: "none"});
-        $('.side-panel-top-admin').css({display: "none"});
+        $('.side-panel-container-customer').css({display: "block"});
+        $('.customer-dashboard').css({display: "block"});
+        $('.customer-dashboard-container').css({display: "block"});
+        $('.side-panel-container-driver').css({display: "none"});
+    }
+
+    if (x === "driver"){
+        $('.side-panel-container-driver').css({display: "block"});
+        $('.driver-dashboard').css({display: "block"});
+        $('.driver-dashboard-container').css({display: "block"});
     }
     console.log(x);
 }
@@ -112,4 +128,52 @@ function viewWeeklyIncome() {
 function viewMonthlyIncome() {
     $('.view-week-income').css({display: "none"});
     $('.view-month-income').css({display: "block"});
+}
+
+//--------------Customer Section --------------------//
+function loadCustomerDashboard() {
+
+}
+
+function manageRequests() {
+    $('.main-dashboard-container>section').css({display: "none"});
+    $('.customer-manage-request-section').css({display: "block"});
+}
+
+function manageProfile() {
+    $('.main-dashboard-container>section').css({display: "none"});
+    $('.customer-manage-profile-section').css({display: "block"});
+}
+
+
+function loadNewRequest() {
+    $('.manage-view-request').css({display: "none"});
+    $('.manage-new-rental-request').css({display: "block"});
+}
+
+function loadViewRequest() {
+    $('.manage-view-request').css({display: "block"});
+    $('.manage-new-rental-request').css({display: "none"});
+}
+
+function addRentalRequest() {
+
+}
+
+function updateProfile() {
+
+}
+
+//----------Driver Section---------------------------//
+function loadDriverDashboard() {
+
+}
+
+function logout() {
+    console.log("..........")
+    $('.main').css({display: "none"});
+    $('.header').css({display: "none"});
+    $('.main-dashboard-container>section').css({display: "none"});
+    $('.side-panel-container').css({display: "none"});
+    $('.login-wrap').css({display: "block"});
 }

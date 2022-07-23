@@ -71,6 +71,7 @@
                 <img src="assests/icons/user.png" class="customer-png">
                 <img src="assests/icons/user.png" class="rental-png">
                 <img src="assests/icons/income.png" class="Income-png">
+                <img src="assests/icons/income.png" class="customer-png">
             </ul>
         </section>
 
@@ -102,14 +103,73 @@
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                 Income
             </a>
+
+            <a  id="btnincome" onclick="logout()">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Log Out
+            </a>
         </aside>
     </section>
 
 
-    <!--=====================================CUSTOMER SECTION==================================-->
+    <!--=====================================CUSTOMER SIDE SECTION==================================-->
+    <section class="side-panel-container-customer">
+        <section class="side-panel-top-customer">
+            <ul>
+                <img src="assests/icons/dashboard.png" class="dash-png">
+                <img src="assests/icons/protection.png" class="car-png">
+                <img src="assests/icons/user.png" class="customer-png">
+                <img src="assests/icons/user.png" class="customer-png">
+            </ul>
+        </section>
+
+        <aside class="customer-dashboard">
+            <p> User </p>
+            <a class="btndashboard" id="btndashboard" onclick='loadCustomerDashboard();'>
+                <i class="fa fa-user-o" aria-hidden="true">
+                </i>
+                Dashboard
+            </a>
+
+            <a href="javascript:manageRequests();" id="btncar" onclick="manageRequests()">
+                <i class="fa fa-laptop" aria-hidden="true"></i>
+                Manage Rental Requests
+            </a>
+
+            <a id="btncustomer" onclick="manageProfile()">
+                <i class="fa fa-clone" aria-hidden="true"></i>
+                Manage Profile
+            </a>
+            <a  id="btnincome" onclick="logout()">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Log Out
+            </a>
+
+        </aside>
+    </section>
 
     <!--=====================================DRIVER SECTION==================================-->
+    <section class="side-panel-container-driver">
+        <section class="side-panel-top-driver">
+            <ul>
+                <img src="assests/icons/dashboard.png" class="dash-png">
+                <img src="assests/icons/customer.png" class="dash-png">
+            </ul>
+        </section>
 
+        <aside class="driver-dashboard">
+            <p> Driver </p>
+            <a class="btndashboard" id="btndashboard" onclick='loadDriverDashboard();'>
+                <i class="fa fa-user-o" aria-hidden="true">
+                </i>
+                Dashboard
+            </a>
+            <a  id="btnincome" onclick="logout()">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Log Out
+            </a>
+        </aside>
+    </section>
 
     <!--=====================================MAIN DASHBOARD SECTION==================================-->
     <section class="main-dashboard-container">
@@ -617,6 +677,217 @@
 
             </section>
         </section>
+
+
+
+        <!-- ================================================================================================================================--->
+
+        <!-- =====================CUSTOMER MANAGE SECTION==========================================---->
+
+        <section class="customer-dashboard-container">
+            <section >
+                <div class="dashboard-customer-bookings">
+                    <div>
+                        <img src="assests/icons/user.png">
+                    </div>
+                    <h1 id="totalBookings"></h1>
+                    <p class="fs-5">Bookings Requests</p>
+                </div>
+
+                <div class="dashboard-customer-active-bookings">
+                    <div>
+                        <img src="assests/icons/user.png">
+                    </div>
+                    <h1 id="activeBookings"></h1>
+                    <p class="fs-5">Active Bookings Requests</p>
+                </div>
+
+            </section>
+        </section>
+
+        <!--=====================================MANAGE RENTAL REQUEST SECTION==================================-->
+        <section class="customer-manage-request-section">
+
+            <!--=====================================ADD NEW RENTAL REQUEST SECTION==================================-->
+            <section class="manage-new-rental-request">
+
+                <section class="add-car container-fluid" style="margin-top: 50px">
+                    <form enctype="multipart/form-data" >
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtNIC">Customer NIC</label>
+                                <input type="text" id="txtNIC" class="form-control" name="txtNIC">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtCarRegNo">Car Reg No</label>
+                                <input type="text" id="txtCarRegNo" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="pickupdate">Pick Up Date</label>
+                                <input class="form-control" type="date" id="pickupdate" name="pickupdate">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="form-label" for="pickupTime">Pick Up Time</label>
+                                <input class="form-control" type="pickupTime" id="pickupTime" name="pickupTime">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="returnDate">Return Date</label>
+                                <input class="form-control" type="date" id="returnDate" name="returnDate">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="form-label" for="returnTime">Return Time</label>
+                                <input class="form-control" type="returnTime" id="returnTime" name="returnTime">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <button type="button" class="btn btn-outline-danger" onclick="addRentalRequest()">Add Rental Request To
+                                Save
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </section>
+
+            <!--=====================================VIEW RENTAL REUQUEST SECTION==================================-->
+            <section class="manage-view-request">
+
+                <table class="table table-success table-hover">
+                    <thead class="table table-dark">
+                    <th>Id</th>
+                    <th>NIC</th>
+                    <th>Pick Up Date</th>
+                    <th>Pick Up Time</th>
+                    <th>Return Date</th>
+                    <th>Return Time</th>
+                    <th>Loss Damage Payment</th>
+                    <th>Rental Fee</th>
+                    <th>Car Reg No</th>
+                    <th>Car Type</th>
+                    <th>Driver Name</th>
+                    <th>Driver NIC</th>
+                    <th>Requested On</th>
+                    <th>Status</th>
+
+                    </thead>
+                    <tbody id="tblViewCars">
+
+                    </tbody>
+                </table>
+
+            </section>
+
+            <section class="manage-customer-rental-request-option-footer" style="margin-top: 20px">
+                <div>
+                    <button type="button" onclick="loadNewRequest()"  class="btnAddRequest" id="btnAddRequest">Add New Request</button>
+                    &nbsp
+                    <button type="button" onclick="loadViewRequest()" class="btnViewRequest" id="btnViewRequest">View Request Details</button>
+                </div>
+            </section>
+
+        </section>
+
+        <!--===================================== PROFILE SECTION ==================================-->
+        <section class="customer-manage-profile-section">
+            <form enctype="multipart/form-data" >
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="txtCusName">Customer Name</label>
+                        <input type="text" id="txtCusName" class="form-control" name="txtCusName">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label for="txtEmail">Email</label>
+                        <input type="text" id="txtEmail" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" id="password" name="password">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label class="form-label" for="address">Address</label>
+                        <input class="form-control" type="text" id="address" name="address">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="liscenceNo">Liscence No</label>
+                        <input class="form-control" type="text" id="liscenceNo" name="liscenceNo">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label class="form-label" for="nic">NIC</label>
+                        <input class="form-control" type="text" id="nic" name="nic">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="contactNo">Contact No</label>
+                        <input class="form-control" type="text" id="contactNo" name="contactNo">
+                    </div>
+
+                    <div class="col-lg-6">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn btn-outline-danger" onclick="updateProfile()">Update Profile
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+
+
+
+
+
+
+        <!-- ================================================================================================================================--->
+
+        <!-- =====================DRIVER MANAGE SECTION==========================================---->
+
+        <section class="driver-dashboard-container">
+            <section style="margin-left: 200px;margin-top: 50px">
+                <table class="table table-success table-hover">
+                    <thead class="table table-dark">
+                    <th style="width: 12.5%">Id</th>
+                    <th style="width: 12.5%">NIC</th>
+                    <th style="width: 12.5%">Name</th>
+                    <th style="width: 12.5%">Pick Up Date</th>
+                    <th style="width: 12.5%">Pick Up Time</th>
+                    <th style="width: 12.5%">Return Date</th>
+                    <th style="width: 12.5%">Return Time</th>
+                    <th style="width: 12.5%">Status</th>
+
+                    </thead>
+                    <tbody id="tblViewCars">
+
+                    </tbody>
+                </table>
+
+            </section>
+        </section>
+
     </section>
 
     <script src="assests/js/main.js"></script>
