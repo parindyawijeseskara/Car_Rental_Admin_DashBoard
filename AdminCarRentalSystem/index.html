@@ -93,7 +93,7 @@
                 Manage Customer
             </a>
 
-            <a id="btnrental" onclick="switchToRental()">
+            <a id="btnrental" onclick="manageRentals()">
                 <i class="fa fa-star-o" aria-hidden="true"></i>
                 Rental Request
             </a>
@@ -104,6 +104,12 @@
             </a>
         </aside>
     </section>
+
+
+    <!--=====================================CUSTOMER SECTION==================================-->
+
+    <!--=====================================DRIVER SECTION==================================-->
+
 
     <!--=====================================MAIN DASHBOARD SECTION==================================-->
     <section class="main-dashboard-container">
@@ -417,6 +423,104 @@
 
                 </tbody>
             </table>
+        </section>
+
+        <!--===================================== RENTAL REQUEST SECTION ==================================-->
+        <section class="rental-container">
+
+            <section class="rental-container-header">
+                <div>
+
+                    <button onclick="viewRentalRequest()" type="button" class="btnrequests" id="requestss">Requests
+                    </button>
+                    &nbsp
+                    <button onclick="viewRequestsForPayment()" type="button" class="btnc-driver" id="payments">
+                        Payments
+                    </button>
+                </div>
+            </section>
+
+            <section class="view-rentals" style="overflow-y: scroll; overflow-x: scroll;margin-top: 30px">
+
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                    <th>Rent ID</th>
+                    <th>Duration Plan</th>
+                    <th>Cus ID</th>
+                    <th>Pickup Date</th>
+                    <th>Return Date</th>
+                    <th>Pickup Venue</th>
+                    <th>Return Venue</th>
+                    <th>Pickup Time</th>
+                    <th>Return Time</th>
+                    <th>Driver IDs</th>
+                    <th>Driver Names</th>
+                    <th>Edit Drivers</th>
+                    <th>Car Reg No's</th>
+                    <th>Rent State</th>
+                    <th>Description</th>
+                    <th>Accept/<br>Deny</th>
+                    </thead>
+                    <tbody id="viewRentalsTable">
+
+
+                    </tbody>
+                </table>
+
+
+            </section>
+
+            <section class="change-driver">
+            </section>
+
+            <section class="calculate-payment">
+
+                <div class="row">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                        <th>Rent ID</th>
+                        <th>Duration Plan</th>
+                        <th>Cus ID</th>
+                        <th>Pickup Date</th>
+                        <th>Return Date</th>
+                        <th>Pickup Venue</th>
+                        <th>Return Venue</th>
+                        <th>Driver IDs</th>
+                        <th>Driver Names</th>
+                        <th>Calculate Payment</th>
+                        </thead>
+                        <tbody id="tblCalculatePayment">
+                        <tr>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-primary">
+                        <th>Reg No</th>
+                        <th>Brand</th>
+                        <th>Type</th>
+                        <th>Color</th>
+                        <th>Waiver Deduction</th>
+                        <th>Km Meter Value</th>
+                        </thead>
+                        <tbody id="tblCarsForPayment">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-group" id="additionalPaymentContainer">
+                    <label for="txtAdditionalPayment">+Additional</label>
+                    <input type="number" class="form-control" id="txtAdditionalPayment">
+                </div>
+                <button type="button" class="btn btn-warning font-weight-bold" id="btnFinalizePayment">Finalize
+                    Payment
+                </button>
+
+            </section>
+
         </section>
     </section>
 

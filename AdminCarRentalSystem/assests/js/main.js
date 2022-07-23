@@ -9,6 +9,11 @@ function manageCustomer() {
     $('.view-customers-container').css({display: "block"});
 }
 
+function manageRentals() {
+    $('.main-dashboard-container>section').css({display: "none"});
+    $('.rental-container').css({display: "block"});
+}
+
 function navigateTODashboard() {
     $('.main').css({display: "none"});
     $('.header').css({display: "none"});
@@ -26,8 +31,8 @@ function loadDashboard() {
     $('.login-html').css({display: "none"});
     $('.cars-container').css({display: "none"});
     $('.view-customers-container').css({display: "none"});
+    $('.rental-container').css({display: "none"});
 }
-
 
 function selectUserRole() {
     var x = document.getElementById("type").value;
@@ -49,6 +54,7 @@ function  login() {
     $('.login-wrap').css({display: "none"});
     $('.login-html').css({display: "none"});
     $('.cars-container').css({display: "none"});
+    $('.rental-container').css({display: "none"});
 
     var x = document.getElementById("type").value;
     if (x === "admin"){
@@ -78,4 +84,16 @@ function loadNewCarSection() {
     $('.view-cars').css({display: "none"});
     $('.manage-cars-option-container').css({display: "block"});
     $('.edit-cars').css({display: "none"});
+}
+
+function viewRentalRequest() {
+    $('.view-rentals').css({display: "block"});
+    $('.calculate-payment').css({display: "none"});
+    // $('.rental-container').css({display: "none"});
+}
+
+function viewRequestsForPayment() {
+    $('.view-rentals').css({display: "none"});
+    // $('.rental-container').css({display: "none"});
+    $('.calculate-payment').css({display: "block"});
 }
