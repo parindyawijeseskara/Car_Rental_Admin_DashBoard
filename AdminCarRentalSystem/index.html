@@ -17,9 +17,9 @@
     <h1>Easy Car Rental Dashboard</h1>
 </header>
 
-<!--=====================================LOGIN FORM==================================-->
+<!--Login form-->
 <div class="login-wrap">
-    <div class="login-html">
+    <div class="logging" >
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
         <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
         <div class="login-form" style="margin-top: 50px">
@@ -59,11 +59,9 @@
     </div>
 </div>
 
-<!--=====================================DASHBOARD FORM==================================-->
-<main class="main">
-    <!--=====================================ADMIN SECTION==================================-->
+<!--dashboard content and admin side panel-->
+<main class="main"style="background-color: red">
     <section class="side-panel-container">
-        <!--=====================================ADMIN SIDE PANEL==================================-->
         <section class="side-panel-top-admin">
             <ul>
                 <img src="assests/icons/dashboard.png" class="dash-png">
@@ -74,17 +72,15 @@
                 <img src="assests/icons/income.png" class="customer-png">
             </ul>
         </section>
-
-        <!--=====================================ADMIN DASHBOARD FORM==================================-->
         <aside class="admin-dashboard">
             <p> Admin </p>
-            <a class="btndashboard" id="btndashboard" onclick='loadDashboard();'>
+            <a class="btnDashboard" id="btnDashboard" onclick='loadDashboard();'>
                 <i class="fa fa-user-o" aria-hidden="true">
                 </i>
                 Dashboard
             </a>
 
-            <a href="javascript:manageCars();" id="btncar" onclick="manageCars()">
+            <a href="javascript:manageCars();" id="btnCar" onclick="manageCars()">
                 <i class="fa fa-laptop" aria-hidden="true"></i>
                 Manage Cars
             </a>
@@ -112,7 +108,7 @@
     </section>
 
 
-    <!--=====================================CUSTOMER SIDE SECTION==================================-->
+    <!--customer side panel-->
     <section class="side-panel-container-customer">
         <section class="side-panel-top-customer">
             <ul>
@@ -125,13 +121,13 @@
 
         <aside class="customer-dashboard">
             <p> User </p>
-            <a class="btndashboard" id="btndashboard" onclick='loadCustomerDashboard();'>
+            <a class="btnDashboard" id="btnDashboard" onclick='loadCustomerDashboard();'>
                 <i class="fa fa-user-o" aria-hidden="true">
                 </i>
                 Dashboard
             </a>
 
-            <a href="javascript:manageRequests();" id="btncar" onclick="manageRequests()">
+            <a href="javascript:manageRequests();" id="btnCar" onclick="manageRequests()">
                 <i class="fa fa-laptop" aria-hidden="true"></i>
                 Manage Rental Requests
             </a>
@@ -148,7 +144,7 @@
         </aside>
     </section>
 
-    <!--=====================================DRIVER SECTION==================================-->
+    <!--driver side panel-->
     <section class="side-panel-container-driver">
         <section class="side-panel-top-driver">
             <ul>
@@ -159,7 +155,7 @@
 
         <aside class="driver-dashboard">
             <p> Driver </p>
-            <a class="btndashboard" id="btndashboard" onclick='loadDriverDashboard();'>
+            <a class="btnDashboard" id="btDdashboard" onclick='loadDriverDashboard();'>
                 <i class="fa fa-user-o" aria-hidden="true">
                 </i>
                 Dashboard
@@ -171,11 +167,8 @@
         </aside>
     </section>
 
-    <!--=====================================MAIN DASHBOARD SECTION==================================-->
+    <!--main dashboard content-->
     <section class="main-dashboard-container">
-
-        <!--=====================================MAIN DASHBOARD AREA==================================-->
-
         <section class="admin-dashboard-container">
             <section >
                 <div class="dashboard-users">
@@ -253,10 +246,9 @@
             </section>
         </section>
 
-        <!--=====================================CAR SECTION==================================-->
+        <!--car content-->
         <section class="cars-container">
-
-            <!--=====================================ADD NEW CAR SECTION==================================-->
+            <!--add car content-->
             <section class="manage-cars-option-container">
 
                 <section class="add-car container-fluid">
@@ -392,9 +384,8 @@
 
             </section>
 
-            <!--=====================================VIEW CAR SECTION==================================-->
+            <!--view car content-->
             <section class="view-cars">
-
                 <table class="table table-success table-hover">
                     <thead class="table table-dark">
                     <th>Reg No</th>
@@ -426,7 +417,7 @@
 
             </section>
 
-            <!--=====================================EDIT CAR SECTION==================================-->
+            <!--update car content-->
             <section class="edit-cars" style="overflow-x: scroll; overflow-y: scroll">
 
                 <table class="table table-success table-hover">
@@ -467,7 +458,7 @@
 
         </section>
 
-        <!--===================================== CUSTOMER SECTION ==================================-->
+        <!--customer content-->
         <section class="view-customers-container">
             <table class="table table-success table-hover">
                 <thead class="table table-dark">
@@ -485,7 +476,7 @@
             </table>
         </section>
 
-        <!--===================================== RENTAL REQUEST SECTION ==================================-->
+        <!--rental request content-->
         <section class="rental-container">
 
             <section class="rental-container-header">
@@ -583,7 +574,7 @@
 
         </section>
 
-        <!--===================================== INCOME SECTION ==================================-->
+        <!--income content-->
         <section class="income-container">
             <section class="income-container-header">
                 <div>
@@ -678,11 +669,7 @@
             </section>
         </section>
 
-
-
-        <!-- ================================================================================================================================--->
-
-        <!-- =====================CUSTOMER MANAGE SECTION==========================================---->
+        <!-- Manage customer content---->
 
         <section class="customer-dashboard-container">
             <section >
@@ -705,10 +692,8 @@
             </section>
         </section>
 
-        <!--=====================================MANAGE RENTAL REQUEST SECTION==================================-->
+        <!--manage rental request content-->
         <section class="customer-manage-request-section">
-
-            <!--=====================================ADD NEW RENTAL REQUEST SECTION==================================-->
             <section class="manage-new-rental-request">
 
                 <section class="add-car container-fluid" style="margin-top: 50px">
@@ -760,7 +745,7 @@
 
             </section>
 
-            <!--=====================================VIEW RENTAL REUQUEST SECTION==================================-->
+            <!--view rental request content-->
             <section class="manage-view-request">
 
                 <table class="table table-success table-hover">
@@ -798,7 +783,7 @@
 
         </section>
 
-        <!--===================================== PROFILE SECTION ==================================-->
+        <!--profile content=-->
         <section class="customer-manage-profile-section">
             <form enctype="multipart/form-data" >
                 <div class="row">
@@ -857,14 +842,7 @@
         </section>
 
 
-
-
-
-
-
-        <!-- ================================================================================================================================--->
-
-        <!-- =====================DRIVER MANAGE SECTION==========================================---->
+        <!-- Manage driver content---->
 
         <section class="driver-dashboard-container">
             <section style="margin-left: 200px;margin-top: 50px">
