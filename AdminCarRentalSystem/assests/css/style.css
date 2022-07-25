@@ -1,8 +1,7 @@
 body {
     margin:0;
     color:#edf3ff;
-    background:#c8c8c8;
-    /*background:url(https://hdqwalls.com/download/material-design-4k-2048x1152.jpg) fixed;*/
+    background:blue;
     background-size: cover;
     font:600 16px/18px 'Open Sans',sans-serif;
 }
@@ -14,22 +13,23 @@ a{color:inherit;text-decoration:none}
 .login-wrap{
     width: 100%;
     margin:auto;
-    max-width:510px;
-    min-height:510px;
     position:relative;
-    background:url(https://maxcdn.icons8.com/app/uploads/2016/03/material-1-1000x563.jpg) no-repeat center;
-    background-size: cover;
+    background-color: #191C24;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
-.login-html{
-    width:100%;
-    height:100%;
+
+.logging{
+    align-self: center;
+    width:50%;
+    /*height:70%;*/
     position:absolute;
     padding:90px 70px 50px 70px;
-    background:rgba(0,0,0,0.5);
+    background-color: #37474f;
+    margin-left: 25%;
+    /*background:rgba(0,0,0,0.5);*/
 }
-.login-html .sign-in-htm,
-.login-html .for-pwd-htm{
+.logging .sign-in-htm,
+.logging .for-pwd-htm{
     top:0;
     left:0;
     right:0;
@@ -42,26 +42,25 @@ a{color:inherit;text-decoration:none}
     -webkit-transition:all .4s linear;
     transition:all .4s linear;
 }
-.login-html .sign-in,
-.login-html .for-pwd,
+.logging .sign-in,
+.logging .for-pwd,
 .login-form .group .check{
     display:none;
 }
-.login-html .tab,
+.logging .tab,
 .login-form .group .label,
 .login-form .group .button{
     text-transform:uppercase;
 }
-.login-html .tab{
-    /*font-size:22px;*/
+.logging .tab{
     margin-right:15px;
     padding-bottom:5px;
     margin:0 15px 10px 0;
     display:inline-block;
     border-bottom:2px solid transparent;
 }
-.login-html .sign-in:checked + .tab,
-.login-html .for-pwd:checked + .tab{
+.logging .sign-in:checked + .tab,
+.logging .for-pwd:checked + .tab{
     color:#fff;
     border-color:#1161ee;
 }
@@ -80,7 +79,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .input,
 .login-form .group .button{
     width:100%;
-    color:#fff;
+    color:white;
     display:block;
 }
 .login-form .group .input,
@@ -99,7 +98,7 @@ a{color:inherit;text-decoration:none}
     font-size:12px;
 }
 .login-form .group .button{
-    background:#1161ee;
+    background: #526069;
 }
 .login-form .group label .icon{
     width:15px;
@@ -136,7 +135,7 @@ a{color:inherit;text-decoration:none}
     color:#fff;
 }
 .login-form .group .check:checked + label .icon{
-    background:#1161ee;
+    background:gold;
 }
 .login-form .group .check:checked + label .icon:before{
     -webkit-transform:scale(1) rotate(45deg);
@@ -146,11 +145,11 @@ a{color:inherit;text-decoration:none}
     -webkit-transform:scale(1) rotate(-45deg);
     transform:scale(1) rotate(-45deg);
 }
-.login-html .sign-in:checked + .tab + .for-pwd + .tab + .login-form .sign-in-htm{
+.logging .sign-in:checked + .tab + .for-pwd + .tab + .login-form .sign-in-htm{
     -webkit-transform:rotate(0);
     transform:rotate(0);
 }
-.login-html .for-pwd:checked + .tab + .login-form .for-pwd-htm{
+.logging .for-pwd:checked + .tab + .login-form .for-pwd-htm{
     -webkit-transform:rotate(0);
     transform:rotate(0);
 }
@@ -167,18 +166,18 @@ a{color:inherit;text-decoration:none}
 
 
 .header {
+    margin-top: -20px;
     width: 100vw;
-    height: 60px;
+    height: 70px;
     position: fixed;
     z-index: 4;
-    background:  #2c3034;
+    background:  #191C24;
     display: flex;
 }
 
 .header > h1 {
     position: relative;
-    font-family: "Baskerville Old Face";
-    /*font-weight: bold;*/
+    /*font-family: "Lobster";*/
     color: white;
     font-size: 28px;
     top: 12px;
@@ -200,11 +199,12 @@ aside {
     width: 250px;
     padding-left: 33px;
     height: 100vh;
-    background-image: linear-gradient(to bottom , #249876, #249876);
+    background-color:#191C24;
+    /*background-image: linear-gradient(to bottom , #249876, #249876);*/
     border-top-right-radius: 80px;
     position: fixed;
     top: 63px;
-    font-family: Quicksand;
+    /*font-family: Quicksand;*/
     transition: 0.5s;
     left: -200px;
     text-decoration: none;
@@ -215,7 +215,8 @@ aside {
     color: #fff;
     height: 100vh;
     width: 50px;
-    background-image: linear-gradient(to bottom , #249876,#249876);
+    background-color:#37474f;
+    /*background-image: linear-gradient(to bottom , #249876,#249876);*/
     position: fixed;
     left: 0;
     z-index: 3;
@@ -237,7 +238,7 @@ aside:hover{
 
 .dash-png{
     width: 35px;
-    /* background: white; */
+    background:#37474f;
     position: absolute;
     top: 123px;
     left: 8px;
@@ -245,14 +246,14 @@ aside:hover{
 
 .car-png{
     width: 40px;
-    /* background: white; */
+     background:#37474f;
     position: absolute;
     top: 171px;
     left: 6px;
 }
 .customer-png{
     width: 34px;
-    /* background: white; */
+     background:#37474f;
     position: absolute;
     top: 223px;
     left: 8px;
@@ -260,14 +261,13 @@ aside:hover{
 
 .rental-png{
     width: 40px;
-    /* background: white; */
     position: absolute;
     top: 270px;
     left: 5px;
 }
 .Income-png{
     width: 43px;
-    /* background: white; */
+     background:#37474f;
     position: absolute;
     top: 320px;
     left: 3px;
@@ -289,11 +289,10 @@ aside a:link{
 }
 
 aside a:hover {
-    color: #3f5efb;
-    background: #d4acac;
+    color: white;
+    background:#37474f;
     outline: none;
     position: relative;
-    background-color: #d4acac;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     left: 20px;
@@ -303,7 +302,6 @@ aside a:hover {
 
 aside a i {
     margin-right: 15px;
-    /*margin-left: 10px;*/
 }
 
 aside a:hover::after {
@@ -320,7 +318,6 @@ aside a:hover::after {
 }
 
 aside a:hover::before {
-    /*content: "";*/
     position: absolute;
     background-color: transparent;
     top: 51px;
@@ -333,130 +330,126 @@ aside a:hover::before {
 }
 
 aside p {
-    font-family: Quicksand;
+    /*font-family: Quicksand;*/
     font-size: 38px;
     margin: 27px;
     padding: 2px 0;
 }
 
 .main-dashboard-container{
-    width: 1650px;
-    height: 840px;
-    background: white;
+    background-color:#191C24;
+    width:98.7vw;
+    height:99vh;
     position: absolute;
-    top: 64px;
-    left: 108px;
+    /*top: 64px;*/
+    /*left: 108px;*/
     z-index: -1;
 }
 
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-/*////////////////////////////////Dashboard/////////////////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-
 .dashboard-users{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background: #249876;
+    background: green;
     position: absolute;
-    top: 35px;
-    left: 308px;
+    margin-top: 80px;
+    left: 15%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-bookings{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background: #249876;
+    background:#37474f;
     position: absolute;
-    top: 35px;
-    left: 710px;
+    margin-top: 80px;
+    left: 34%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-active-bookings{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background: #249876;
+    background: #37474f;
     position: absolute;
-    top: 35px;
-    left: 1113px;
+    margin-top: 80px;
+    left: 52%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-available-cars{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background: #249876;
+    background:#37474f;
     position: absolute;
-    top: 235px;
-    left: 308px;
+    margin-top: 17%;
+    left: 15%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-reserved-cars{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background: #249876;
+    background:#37474f;
     position: absolute;
-    top: 235px;
-    left: 710px;
+    margin-top: 17%;
+    left: 34%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-maintain-cars{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background: #249876;
+    background:#37474f;
     position: absolute;
-    top: 235px;
-    left: 1113px;
+    margin-top: 17%;
+    left: 52%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-available-drivers{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background:#249876;
+    background:#37474f;
     position: absolute;
-    top: 435px;
-    left: 308px;
+    margin-top: 30%;
+    left: 15%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-reserved-drivers{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;;
     border-radius: 40px;
-    background: #249876;
+    background:#37474f;
     position: absolute;
-    top: 435px;
-    left: 710px;
+    margin-top: 30%;
+    left: 34%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
 
 .dashboard-under-maintainance-cars{
-    width: 229px;
-    height: 167px;
+    width: 12vw;
+    height: 22vh;
     border-radius: 40px;
-    background: #249876;
+    background:#37474f;
     position: absolute;
-    top: 435px;
-    left: 1113px;
+    margin-top: 30%;
+    left: 52%;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
     cursor: pointer;
 }
@@ -472,13 +465,11 @@ aside p {
     position: absolute;
     top: 65px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-users>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 115px;
     left: 34px;
@@ -495,13 +486,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-bookings>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 85px;
     left: 45px;
@@ -518,13 +507,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-active-bookings>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 85px;
     left: 43px;
@@ -541,13 +528,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-available-cars>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 44px;
@@ -564,13 +549,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-reserved-cars>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 47px;
@@ -587,13 +570,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-maintain-cars>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 100px;
     left: 31px;
@@ -610,13 +591,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-available-drivers>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 34px;
@@ -633,13 +612,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-reserved-drivers>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 105px;
     left: 34px;
@@ -656,25 +633,18 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-under-maintainance-cars>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 102px;
     left: 23px;
 }
-
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-/*//////////////////////////////// MANAGE CARS /////////////////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-
 .manage-cars-option-footer {
     width: 1185px;
-    background-color: gainsboro;
+    background-color:#191C24;
     height: 100px;
     position: absolute;
     right: -30px;
@@ -692,13 +662,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -716,13 +684,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -732,7 +698,7 @@ aside p {
 .btnviewCars:hover{
     box-shadow: inset 150px 0 0 0 #313131;
     cursor: pointer;
-    color:#249876;
+    color:#37474f;
 }
 
 .btneditCar{
@@ -740,13 +706,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -760,6 +724,7 @@ aside p {
 }
 
 .manage-cars-option-container {
+    background-color: red;
     width: 1200px;
     height: 450px;
     position: absolute;
@@ -770,22 +735,18 @@ aside p {
     border-radius: 4px;
 }
 
-/*////////////////////////////////Add-Car/////////////////////////////////////////////////*/
-
 .add-car {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #191C24;
     border-radius: 4px;
-    font-family: Quicksand;
-}
 
-/*////////////////////////////////View-Cars/////////////////////////////////////////////////*/
+}
 
 .view-cars {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #191C24;
     border-radius: 4px;
     display: none;
     overflow-x: scroll;
@@ -799,13 +760,10 @@ aside p {
     transform: scale(1.5);
 }
 
-/*////////////////////////////////Edit-Cars/////////////////////////////////////////////////*/
-
-
 .edit-cars {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #191C24;
     border-radius: 4px;
     display: none;
     position: absolute;
@@ -817,13 +775,6 @@ aside p {
     transform: scale(1.5);
 }
 
-
-
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-/*////////////////////////////////View-Customers/////////////////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-
-
 #tblViewCustomers img:hover{
     transform: scale(1.5);
 }
@@ -831,7 +782,7 @@ aside p {
 .view-customers-container {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color:#191C24;
     border-radius: 4px;
     display: none;
     overflow-x: scroll;
@@ -841,16 +792,11 @@ aside p {
     left: 263px;
 }
 
-
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-/*//////////////////////////////// Income /////////////////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-
 .d-income{
     width: 334px;
     height: 222px;
     border-radius: 40px;
-    background: #0f6674;
+    background: red;
     position: absolute;
     top: 58px;
     left: 142px;
@@ -862,7 +808,7 @@ aside p {
     width: 334px;
     height: 222px;
     border-radius: 40px;
-    background: #0f6674;
+    background-color: red;
     position: absolute;
     top: 58px;
     left: 790px;
@@ -906,13 +852,12 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
+    /*font-family: Quicksand;*/
     color: white;
 }
 
 .d-income>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 163px;
     left: 80px;
@@ -930,13 +875,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .w-income>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 163px;
     left: 62px;
@@ -954,13 +897,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .m-income>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 163px;
     left: 52px;
@@ -978,13 +919,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .y-income>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 163px;
     left: 73px;
@@ -1045,14 +984,9 @@ aside p {
     width: 163px;
 }
 
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-/*//////////////////////////////// Rental /////////////////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-
-
 .rental-container-header {
     width: 1185px;
-    background-color: gainsboro;
+    background-color: #191C24;
     height: 100px;
     position: absolute;
     right: -30px;
@@ -1070,13 +1004,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -1086,7 +1018,7 @@ aside p {
 .btnrequests:hover{
     box-shadow: inset 150px 0 0 0 #313131;
     cursor: pointer;
-    color:#249876;
+    color:#37474f;
 }
 
 .btnc-driver{
@@ -1094,13 +1026,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:red;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -1118,13 +1048,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:purple;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -1137,24 +1065,20 @@ aside p {
     color:#249876;
 }
 
-/*////////////////////////////////View-Rentals/////////////////////////////////////////////////*/
-
 .view-rentals {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color:#191C24;
     border-radius: 4px;
     position: absolute;
     top: 117px;
     left: 64px;
 }
 
-/*////////////////////////////////Change-Driver/////////////////////////////////////////////////*/
-
 .change-driver {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: red;
     border-radius: 4px;
     display: none;
 }
@@ -1166,15 +1090,11 @@ aside p {
 #btnReplace {
     display: none;
 }
-
-/*////////////////////////////////Calculate-Payment/////////////////////////////////////////////////*/
-
-
 .calculate-payment {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #191C24;
     border-radius: 4px;
     display: none;
     top: 112px;
@@ -1217,14 +1137,9 @@ aside p {
     opacity: 0;
 }
 
-
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-/*//////////////////////////////// INCOME /////////////////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////////////////////*/
-
 .income-container-header {
     width: 1185px;
-    background-color: gainsboro;
+    background-color: #191C24;
     height: 100px;
     position: absolute;
     right: -30px;
@@ -1241,13 +1156,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -1265,13 +1178,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -1284,12 +1195,10 @@ aside p {
     color:#249876;
 }
 
-/*////////////////////////////////View-Week Income/////////////////////////////////////////////////*/
-
 .view-week-income {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #191C24;
     border-radius: 4px;
     position: absolute;
     top: 117px;
@@ -1299,21 +1208,18 @@ aside p {
 .view-month-income {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color:#37474f;
     border-radius: 4px;
     position: absolute;
     top: 117px;
     left: 64px;
 }
 
-
-/*///////////////////////////CUSTOMER DASHBOARD SECTION/////////////////////////////// */
-
 .dashboard-customer-bookings{
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #249876;
+    background: #37474f;
     position: absolute;
     top: 35px;
     left: 190px;
@@ -1325,7 +1231,7 @@ aside p {
     width: 229px;
     height: 167px;
     border-radius: 40px;
-    background: #249876;
+    background:#37474f;
     position: absolute;
     top: 35px;
     left: 520px;
@@ -1344,13 +1250,11 @@ aside p {
     position: absolute;
     top: 65px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-customer-bookings>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 115px;
     left: 34px;
@@ -1367,13 +1271,11 @@ aside p {
     position: absolute;
     top: 75px;
     left: 88px;
-    font-family: Quicksand;
     color: white;
 }
 
 .dashboard-customer-active-bookings>p{
     color: white;
-    font-family: Quicksand;
     position: absolute;
     top: 85px;
     left: 45px;
@@ -1381,7 +1283,7 @@ aside p {
 
 .manage-customer-rental-request-option-footer {
     width: 1185px;
-    background-color: gainsboro;
+    background-color:#191C24;
     height: 100px;
     position: absolute;
     right: -30px;
@@ -1399,13 +1301,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -1423,13 +1323,11 @@ aside p {
     height: 63px;
     border: none;
     color: white;
-    background-color:#249876;
+    background-color:#37474f;
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #313131;
     transition: ease-out 0.3s;
     font-size: 19px;
-    font-family: Quicksand;
-    /* font-weight: bold; */
     outline: none;
     position: absolute;
     top: 9px;
@@ -1456,7 +1354,7 @@ aside p {
 .manage-view-request {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #191C24;
     border-radius: 4px;
     display: none;
     overflow-x: scroll;
@@ -1469,7 +1367,7 @@ aside p {
 .customer-manage-profile-section {
     width: 80%;
     height: 100%;
-    background-color: white;
+    background-color:#191C24;
     border-radius: 4px;
     display: none;
 
