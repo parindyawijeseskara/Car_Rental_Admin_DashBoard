@@ -65,7 +65,7 @@ $("#btnViewCars").click(function (){
 function loadAllViewCars() {
     $("#tblViewCarDetails").empty();
     $.ajax({
-        url: baseUrl,
+        url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/car",
         method: "GET",
         success: function (resp) {
             for(const car of resp.data){

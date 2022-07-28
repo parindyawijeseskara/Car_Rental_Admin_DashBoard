@@ -418,10 +418,6 @@
                     <th>Reg No</th>
                     <th>Brand</th>
                     <th>Type</th>
-                    <th>Front Image</th>
-                    <th>Back Image</th>
-                    <th>Side Image</th>
-                    <th>Interior Image</th>
                     <th>Colour</th>
                     <th>Maintainence</th>
                     <th>Created On</th>
@@ -436,6 +432,10 @@
                     <th>Fuel Type</th>
                     <th>Damaged Or Not</th>
                     <th>Created By</th>
+                    <th>Front Image</th>
+                    <th>Back Image</th>
+                    <th>Side Image</th>
+                    <th>Interior Image</th>
 
                     </thead>
                     <tbody id="tblViewCarDetails">
@@ -723,44 +723,83 @@
 
         <!--manage rental request content-->
         <section class="customer-manage-request-section">
+
+            <!--=====================================ADD NEW RENTAL REQUEST SECTION==================================-->
             <section class="manage-new-rental-request">
 
-                <section class="add-car container-fluid" style="margin-top: 50px">
-                    <form enctype="multipart/form-data" >
+                <section class="add-car container-fluid" style="margin-top: 150px">
+                    <form  enctype="multipart/form-data" id="rentalRequestForm" name="rentalRequestForm">
                         <div class="row">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="pickupdate">Pick Up Date</label>
+                                    <input class="form-control" type="date" id="pickupdate" name="pickupdate">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label for="returnDate">Return Date</label>
+                                    <input onchange="checkAvailability()" class="form-control" type="date" id="returnDate" name="returnDate">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="pickupTime">Pick Up Time</label>
+                                    <input class="form-control" type="text" id="pickupTime" name="pickupTime">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label class="form-label" for="returnTime">Return Time</label>
+                                    <input class="form-control" type="text" id="returnTime" name="returnTime">
+                                </div>
+                            </div>
+
                             <div class="col-lg-6">
                                 <label for="txtNIC">Customer NIC</label>
                                 <input type="text" id="txtNIC" class="form-control" name="txtNIC">
                             </div>
 
                             <div class="col-lg-6">
-                                <label for="txtCarRegNo">Car Reg No</label>
-                                <input type="text" id="txtCarRegNo" class="form-control">
+                                <label for="txtCarRegNo"><b>Car</b></label>
+                                <select  onchange="selectCar()" class="form-control" id="txtCarRegNo" name="txtCarRegNo"></select>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="pickupdate">Pick Up Date</label>
-                                <input class="form-control" type="date" id="pickupdate" name="pickupdate">
+                                <label for="lossDamage">Loss Damage Payment</label>
+                                <input class="form-control" type="text" id="lossDamage" name="lossDamage">
                             </div>
-
                             <div class="col-lg-6">
-                                <label class="form-label" for="pickupTime">Pick Up Time</label>
-                                <input class="form-control" type="pickupTime" id="pickupTime" name="pickupTime">
+                                <label for="paymentreciept">Upload Loss Damage Payment Receipt</label>
+                                <input class="form-control" type="file" id="paymentreciept" name="paymentreciept">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="returnDate">Return Date</label>
-                                <input class="form-control" type="date" id="returnDate" name="returnDate">
                             </div>
+                        </div>
 
-                            <div class="col-lg-6">
-                                <label class="form-label" for="returnTime">Return Time</label>
-                                <input class="form-control" type="returnTime" id="returnTime" name="returnTime">
-                            </div>
+                        <button style="margin-top: 10px" type="button" onclick="selectCarValue()">Add To Table</button>
+                        <button  style="margin-top: 10px"  type="button" onclick="deleteCarValue()">Delete</button>
+
+                        <div class="row" >
+                            <table id="carTable" name="carTable" class="table table-success table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <th>Car</th>
+                                    <th>Loss Damage Payment</th>
+                                    <th>Bank Slip</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
 
                         <div class="row">
@@ -774,7 +813,26 @@
 
             </section>
 
-            <!--view rental request content-->
+            <section class="preview-rental-section" style="margin-top: 150px">
+                <form  enctype="multipart/form-data" id="rentalPayment" name="rentalPayment">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="rentalFee">Rental Fee</label>
+                            <input class="form-control" type="text" id="rentalFee" name="rentalFee">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <button type="button" class="btn btn-outline-danger" style="margin-top: 10px" onclick="makePament()">
+                            Make Payment
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!--=====================================VIEW RENTAL REUQUEST SECTION==================================-->
             <section class="manage-view-request">
 
                 <table class="table table-success table-hover">
@@ -900,6 +958,7 @@
     <script src="assests/js/jquery-3.6.0.min.js"></script>
     <script src="assests/js/main.js"></script>
     <script src="src/services/Car.js"></script>
+    <script src="src/services/rentalRequest.js"></script>
     <script src="assests/js/bootstrap.min.js"></script>
 </main>
 

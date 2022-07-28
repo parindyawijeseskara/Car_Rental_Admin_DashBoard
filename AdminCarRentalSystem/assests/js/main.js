@@ -1,4 +1,6 @@
 
+var baseUrl = "http://localhost:8080/CarRentalSystem_war_exploded/api/v1";
+
 function manageCars() {
     $('.main-dashboard-container>section').css({display: "none"});
     $('.cars-container').css({display: "block"});
@@ -42,10 +44,6 @@ function loadDashboard() {
     $('.customer-manage-request-section').css({display: "none"});
     $('.customer-dashboard-container').css({display: "none"});
     $('.driver-dashboard-container').css({display: "none"});
-    // $('.customer-dashboard-container').css({display: "none"});
-    // $('.side-panel-container-driver').css({display: "none"});
-    // $('.driver-dashboard').css({display: "none"});
-    // $('.driver-dashboard-container').css({display: "none"});
 }
 
 function selectUserRole() {
@@ -57,7 +55,6 @@ function selectUserRole() {
     if (x === "customer"){
         $('.admin-dashboard').css({display: "none"});
     }
-    console.log(x);
 }
 
 function  login() {
@@ -87,7 +84,6 @@ function  login() {
         $('.driver-dashboard').css({display: "block"});
         $('.driver-dashboard-container').css({display: "block"});
     }
-    console.log(x);
 }
 
 function loadViewCarSection() {
@@ -111,12 +107,10 @@ function loadNewCarSection() {
 function viewRentalRequest() {
     $('.view-rentals').css({display: "block"});
     $('.calculate-payment').css({display: "none"});
-    // $('.rental-container').css({display: "none"});
 }
 
 function viewRequestsForPayment() {
     $('.view-rentals').css({display: "none"});
-    // $('.rental-container').css({display: "none"});
     $('.calculate-payment').css({display: "block"});
 }
 
@@ -138,6 +132,7 @@ function loadCustomerDashboard() {
 function manageRequests() {
     $('.main-dashboard-container>section').css({display: "none"});
     $('.customer-manage-request-section').css({display: "block"});
+    $('.preview-rental-section').css({display: "none"});
 }
 
 function manageProfile() {
@@ -148,21 +143,18 @@ function manageProfile() {
 
 function loadNewRequest() {
     $('.manage-view-request').css({display: "none"});
+    $('.preview-rental-section').css({display: "none"});
     $('.manage-new-rental-request').css({display: "block"});
 }
 
 function loadViewRequest() {
     $('.manage-view-request').css({display: "block"});
     $('.manage-new-rental-request').css({display: "none"});
+    $('.preview-rental-section').css({display: "none"});
 }
 
-function addRentalRequest() {
 
-}
-
-function updateProfile() {
-
-}
+function updateProfile() {}
 
 //----------Driver Section---------------------------//
 function loadDriverDashboard() {
@@ -170,10 +162,13 @@ function loadDriverDashboard() {
 }
 
 function logout() {
-    console.log("..........")
     $('.main').css({display: "none"});
     $('.header').css({display: "none"});
     $('.main-dashboard-container>section').css({display: "none"});
     $('.side-panel-container').css({display: "none"});
     $('.login-wrap').css({display: "block"});
 }
+
+
+
+
