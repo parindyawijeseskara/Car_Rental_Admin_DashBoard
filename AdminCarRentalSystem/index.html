@@ -252,16 +252,17 @@
             <section class="manage-cars-option-container">
 
                 <section class="add-car container-fluid">
-                    <form enctype="multipart/form-data" >
+                    <form  enctype="multipart/form-data" id="carForm" name="carForm">
+<!--                    <form id="carForm" name="carForm">-->
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="txtRegistrationNo">Registration No</label>
-                                <input type="text" id="txtRegistrationNo" class="form-control" name="id">
+                                <label for="txtRegistrationNo">Register No</label>
+                                <input type="text" id="txtRegistrationNo" class="form-control" name="registerNo">
                             </div>
 
                             <div class="col-lg-6">
                                 <label for="txtBrand">Brand</label>
-                                <input type="text" id="txtBrand" class="form-control">
+                                <input type="text" id="txtBrand" class="form-control"name="brand">
                             </div>
                         </div>
 
@@ -277,19 +278,19 @@
 
                             <div class="col-lg-6">
                                 <label class="form-label" for="frontImg">Front Image</label>
-                                <input class="form-control" type="file" id="frontImg" name="file">
+                                <input class="form-control" type="file" id="frontImg" name="frontImage">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-lg-6">
                                 <label class="form-label" for="backImg">Back Image</label>
-                                <input class="form-control" type="file" id="backImg">
+                                <input class="form-control" type="file" id="backImg" name="backImage">
                             </div>
 
                             <div class="col-lg-6">
                                 <label class="form-label" for="sideImg">Side Image</label>
-                                <input class="form-control" type="file" id="sideImg">
+                                <input class="form-control" type="file" id="sideImg" name="sideImage">
                             </div>
                         </div>
 
@@ -300,8 +301,71 @@
                             </div>
 
                             <div class="col-lg-6">
+                                <label for="txtColor">Color</label>
+                                <input type="text" class="form-control" id="txtColor" name="colour">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtMaintainence">Maintainence</label>
+                                <input type="text" class="form-control" id="txtMaintainence" name="maintainence">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtDate">Created On</label>
+                                <input type="date" class="form-control" id="txtDate" name="createdOn">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="cmbTransmissionType">Transmission Type</label>
+                                <select id="cmbTransmissionType" class="form-select" name="transmissionType">
+                                    <option>Auto</option>
+                                    <option>Manual</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtStatus">Status</label>
+                                <input type="text" class="form-control" id="txtStatus" name="status">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtFreeMileagePerDay">Free Mileage /Day</label>
+                                <input type="text" class="form-control" id="txtFreeMileagePerDay" name="freeKmPerDay">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtFreeMileagePerMonth">Free Mileage /Month</label>
+                                <input type="text" class="form-control" id="txtFreeMileagePerMonth" name="freeKmPerMonth">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtMonthlyRate">Monthly Rate</label>
+                                <input type="text" class="form-control" id="txtMonthlyRate" name="monthlyRate">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="txtDailyRate">Daily Rate</label>
+                                <input type="text" class="form-control" id="txtDailyRate" name="dailyRate">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="txtPricePerExtraKm">Price Per ExtraKm</label>
+                                <input type="text" class="form-control" id="txtPricePerExtraKm" name="pricePerExtraKm">
+                            </div>
+
+                            <div class="col-lg-6">
                                 <label for="cmbNoOfPassengers">No Of Passengers</label>
-                                <select id="cmbNoOfPassengers" class="form-select">
+                                <select id="cmbNoOfPassengers" class="form-select" name="noOfPassengers">
                                     <option>2</option>
                                     <option>4</option>
                                 </select>
@@ -310,73 +374,36 @@
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="cmbTransmissionType">Transmission Type</label>
-                                <select id="cmbTransmissionType" class="form-select">
-                                    <option>Auto</option>
-                                    <option>Manual</option>
-                                </select>
-                            </div>
-
-                            <div class="col-lg-6">
                                 <label for="cmbFuelType">Fuel Type</label>
-                                <select id="cmbFuelType" class="form-select">
+                                <select id="cmbFuelType" class="form-select"name="fuelType">
                                     <option>Diesel</option>
                                     <option>Petrol</option>
                                 </select>
                             </div>
-                        </div>
 
-                        <div class="row">
                             <div class="col-lg-6">
-                                <label for="txtColor">Color</label>
-                                <input type="text" class="form-control" id="txtColor">
+                                <label for="txtCreatedBy">Created By</label>
+                                <input type="text" class="form-control" id="txtCreatedBy"name="createdBy">
                             </div>
-
-                            <div class="col-lg-6">
-                                <label for="txtDailyPriceIncrement">Daily Rate</label>
-                                <input type="number" class="form-control" id="txtDailyPriceIncrement">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="txtMonthlyPriceIncrement">Monthly Rate</label>
-                                <input type="number" class="form-control" id="txtMonthlyPriceIncrement">
-                            </div>
-
-                            <div class="col-lg-6">
-                                <label for="txtFreeMileagePerDay">Free Mileage /Day</label>
-                                <input type="number" class="form-control" id="txtFreeMileagePerDay">
+                                <label for="cmbDamageOrNot">Damaged Or Not</label>
+                                <select id="cmbDamageOrNot" class="form-select"name="damageOrNot">
+                                    <option>Damaged</option>
+                                    <option>Not Damaged</option>
+                                </select>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <label for="txtFreeMileagePerMonth">Free Mileage /Month</label>
-                                <input type="number" class="form-control" id="txtFreeMileagePerMonth">
-                            </div>
-
-                            <div class="col-lg-6">
-                                <label for="txtPricePerKm">Price Per KM</label>
-                                <input type="number" class="form-control" id="txtPricePerKm">
-                            </div>
-                        </div>
 
                         <div class="row">
-                            <div class="col-lg-6">
-                                <label for="txtKmMeterValue">KM Meter Value</label>
-                                <input type="number" class="form-control" id="txtKmMeterValue">
-                            </div>
-
-                            <div class="col-lg-6">
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <button type="button" class="btn btn-outline-danger" onclick="addCarToTheLot()">Add Car To
-                                Save
-                            </button>
+<!--                            <button type="button" class="btn btn-outline-danger" onclick="addCarToTheLot()">Add Car To-->
+<!--                                Save-->
+<!--                            </button>-->
+                            <button class="btn btn-outline-danger" onclick="saveCar()" name="btnSaveCar" id="btnSaveCar" type="button">Add Car</button>
                         </div>
 
                     </form>
@@ -395,22 +422,23 @@
                     <th>Back Image</th>
                     <th>Side Image</th>
                     <th>Interior Image</th>
-                    <th>No Of Passengers</th>
-                    <th>Transmission</th>
-                    <th>Fuel Type</th>
-                    <th>Color</th>
-                    <th>Daily Rate</th>
+                    <th>Colour</th>
+                    <th>Maintainence</th>
+                    <th>Created On</th>
+                    <th>Transmission Type</th>
+                    <th>Status</th>
+                    <th>Free Mileage/Day</th>
+                    <th>Free Mileage/Month</th>
                     <th>Monthly Rate</th>
-                    <th>Free Mileage Per Day</th>
-                    <th>Free Mileage Per Month</th>
-                    <th>Price /Km</th>
-                    <th>KM Meter Value</th>
-                    <th>Available</th>
-                    <th>Damaged</th>
-                    <th>Under Maintenance</th>
+                    <th>Daily Rate</th>
+                    <th>Price Per ExtraKm</th>
+                    <th>No of passengers</th>
+                    <th>Fuel Type</th>
+                    <th>Damaged Or Not</th>
+                    <th>Created By</th>
 
                     </thead>
-                    <tbody id="tblViewCars">
+                    <tbody id="tblViewCarDetails">
 
                     </tbody>
                 </table>
@@ -447,10 +475,11 @@
 
             <section class="manage-cars-option-footer" >
                 <div>
+<!--                    <button class="btn btn-outline-danger" onclick="saveCar()" name="btnSaveCar" id="btnSaveCar" type="button">Add Car</button>-->
 
                     <button type="button" onclick="loadNewCarSection()"  class="btnaddCar" id="addCar">Add New Car</button>
                     &nbsp
-                    <button type="button" onclick="loadViewCarSection()" class="btnviewCars" id="viewCars">View Car Details</button>
+                    <button type="button" onclick="loadViewCarSection()" class="btnviewCars" name="btnViewCars" id="btnViewCars">View Car Details</button>
                     &nbsp
                     <button type="button" onclick="loadEditCarSection()" class="btneditCar" id="editCar">Edit Car Details</button>
                 </div>
@@ -868,10 +897,10 @@
 
     </section>
 
-    <script src="assests/js/main.js"></script>
-    <script src="assests/js/bootstrap.min.js"></script>
     <script src="assests/js/jquery-3.6.0.min.js"></script>
-
+    <script src="assests/js/main.js"></script>
+    <script src="src/services/Car.js"></script>
+    <script src="assests/js/bootstrap.min.js"></script>
 </main>
 
 
