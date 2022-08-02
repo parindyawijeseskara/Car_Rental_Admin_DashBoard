@@ -16,7 +16,7 @@ function manageCustomer() {
         success:function (resp) {
             console.log(resp.data);
             for (let i = 0; i < resp.data.length ; i++) {
-                console.log("kakaka"+resp.data[i].userId)
+                console.log(resp.data[i].userId)
 
                 let row = `<tr><td>${resp.data[i].userId}</td><td>${resp.data[i].userName}</td><td>${resp.data[i].email}</td><td>${resp.data[i].password}</td><td>${resp.data[i].address}</td>
                 <td>${resp.data[i].licenseNo}</td><td>${resp.data[i].nic}</td><td>${resp.data[i].contactNo}</td></tr>`;
@@ -39,10 +39,9 @@ function manageRentals() {
         url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/rental_request",
         method: "GET",
         success: function (resp) {
-            console.log("/////////////")
             console.log(resp.data);
             for (let i = 0; i < resp.data.length; i++) {
-                console.log("kakaka" + resp.data[i].userId)
+                console.log(resp.data[i].userId)
 
                 let row = `<tr><td>${resp.data[i].rentalRequestId}</td><td>${resp.data[i].createdOn}</td><td>${resp.data[i].createdBy}</td><td>${resp.data[i].carNameList}</td><td>${resp.data[i].driverNameList}</td>
                 <td>${resp.data[i].pickUpDate}</td><td>${resp.data[i].returnDate}</td><td>${resp.data[i].pickuptime}</td><td>${resp.data[i].returntime}</td>
@@ -69,7 +68,7 @@ function manageIncome() {
             console.log("/////////////")
             console.log(resp.data);
             for (let i = 0; i < resp.data.length; i++) {
-                console.log("kakaka" + resp.data[i].userId)
+                console.log(resp.data[i].userId)
 
                 let row = `<tr><td>${resp.data[i].paymentId}</td><td>${resp.data[i].rentalRequestId}</td><td>${resp.data[i].userId}</td><td>${resp.data[i].userName}</td><td>${resp.data[i].date}</td>
                 <td>${resp.data[i].amount}</td><td>${resp.data[i].totalAmount}</td></tr>`;
