@@ -9,16 +9,85 @@ function manageCars() {
 function manageCustomer() {
     $('.main-dashboard-container>section').css({display: "none"});
     $('.view-customers-container').css({display: "block"});
+
+    $.ajax({
+        url:"http://localhost:8080/CarRentalSystem_war_exploded/api/v1/user_registration/searchByUserTypeId/2",
+        method:"GET",
+        success:function (resp) {
+            console.log(resp.data);
+            for (let i = 0; i < resp.data.length ; i++) {
+                console.log("kakaka"+resp.data[i].userId)
+
+                let row = `<tr><td>${resp.data[i].userId}</td><td>${resp.data[i].userName}</td><td>${resp.data[i].email}</td><td>${resp.data[i].password}</td><td>${resp.data[i].address}</td>
+                <td>${resp.data[i].licenseNo}</td><td>${resp.data[i].nic}</td><td>${resp.data[i].contactNo}</td></tr>`;
+
+
+                $("#tblViewCustomers").append(row);
+                console.log("dddd"+resp.data)
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
 function manageRentals() {
     $('.main-dashboard-container>section').css({display: "none"});
     $('.rental-container').css({display: "block"});
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/rental_request",
+        method: "GET",
+        success: function (resp) {
+            console.log("/////////////")
+            console.log(resp.data);
+            for (let i = 0; i < resp.data.length; i++) {
+                console.log("kakaka" + resp.data[i].userId)
+
+                let row = `<tr><td>${resp.data[i].rentalRequestId}</td><td>${resp.data[i].createdOn}</td><td>${resp.data[i].createdBy}</td><td>${resp.data[i].carNameList}</td><td>${resp.data[i].driverNameList}</td>
+                <td>${resp.data[i].pickUpDate}</td><td>${resp.data[i].returnDate}</td><td>${resp.data[i].pickuptime}</td><td>${resp.data[i].returntime}</td>
+                <td>${resp.data[i].rentalFee}</td><td>${resp.data[i].status}</td></tr>`;
+
+
+                $("#viewRentalTable").append(row);
+                console.log("dddd" + resp.data)
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
 function manageIncome() {
     $('.main-dashboard-container>section').css({display: "none"});
     $('.income-container').css({display: "block"});
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/rental_payment",
+        method: "GET",
+        success: function (resp) {
+            console.log("/////////////")
+            console.log(resp.data);
+            for (let i = 0; i < resp.data.length; i++) {
+                console.log("kakaka" + resp.data[i].userId)
+
+                let row = `<tr><td>${resp.data[i].paymentId}</td><td>${resp.data[i].rentalRequestId}</td><td>${resp.data[i].userId}</td><td>${resp.data[i].userName}</td><td>${resp.data[i].date}</td>
+                <td>${resp.data[i].amount}</td><td>${resp.data[i].totalAmount}</td></tr>`;
+
+
+                $("#viewIncomeTable").append(row);
+                console.log("dddd" + resp.data)
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+
+
+
+
 }
 
 function navigateTODashboard() {
@@ -83,6 +152,35 @@ function  login() {
         $('.side-panel-container-driver').css({display: "block"});
         $('.driver-dashboard').css({display: "block"});
         $('.driver-dashboard-container').css({display: "block"});
+    }
+
+
+    var userId = 0;
+
+    function login() {
+        var login ={
+            userName:$("txtUserName").val(),
+            password:$("txtPassword").val(),
+            userTypeId:$("cmbUserType").val()
+        }
+
+
+        var data = $("#loginForm").serialize();
+
+        $.ajax({
+            url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/user_registration/getUserInLogging",
+            method: "POST",
+            contentType: "application/json",
+            data:JSON.stringify(login),
+            success:function (resp) {
+                console.log(resp.data.userId);
+
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+
     }
 }
 
