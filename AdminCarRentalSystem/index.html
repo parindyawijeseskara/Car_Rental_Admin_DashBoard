@@ -23,21 +23,22 @@
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
         <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
         <div class="login-form" style="margin-top: 50px">
+            <form id="loginForm" name="userForm">
             <div class="sign-in-htm">
                 <div class="group">
-                    <label for="user" class="label">Username or Email</label>
-                    <input id="user" type="text" class="input">
+                    <label for="txtUserName" class="label">Username or Email</label>
+                    <input id="txtUserName" type="text" class="input" name="userName">
                 </div>
                 <div class="group">
-                    <label for="pass" class="label">Password</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                    <label for="txtPassword" class="label">Password</label>
+                    <input id="txtPassword" type="password" class="input" data-type="password" name="password">
                 </div>
                 <div class="group">
-                    <label for="type" class="label">User Type</label>
-                    <select onchange="selectUserRole()" id="type" class="form-select">
-                        <option value="admin">Admin</option>
-                        <option value="customer">Customer</option>
-                        <option value="driver">Driver</option>
+                    <label for="cmbUserType" class="label">User Type</label>
+                    <select onchange="selectUserRole()" id="cmbUserType" class="form-select">
+                        <option value="admin">1</option>
+                        <option value="customer">2</option>
+                        <option value="driver">3</option>
                     </select>
                 </div>
                 <div class="group">
@@ -85,7 +86,7 @@
                 Manage Cars
             </a>
 
-            <a id="btncustomer" onclick="manageCustomer()">
+            <a id="btnManageCustomer" onclick="manageCustomer()">
                 <i class="fa fa-clone" aria-hidden="true"></i>
                 Manage Customer
             </a>
@@ -255,19 +256,16 @@
                     <form  enctype="multipart/form-data" id="carForm" name="carForm">
 <!--                    <form id="carForm" name="carForm">-->
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtRegistrationNo">Register No</label>
                                 <input type="text" id="txtRegistrationNo" class="form-control" name="registerNo">
                             </div>
 
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtBrand">Brand</label>
                                 <input type="text" id="txtBrand" class="form-control"name="brand">
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="cmbType">Type</label>
                                 <select id="cmbType" class="form-select">
                                     <option>General</option>
@@ -275,95 +273,74 @@
                                     <option>Luxury</option>
                                 </select>
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label class="form-label" for="frontImg">Front Image</label>
                                 <input class="form-control" type="file" id="frontImg" name="frontImage">
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label class="form-label" for="backImg">Back Image</label>
                                 <input class="form-control" type="file" id="backImg" name="backImage">
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label class="form-label" for="sideImg">Side Image</label>
                                 <input class="form-control" type="file" id="sideImg" name="sideImage">
                             </div>
+
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6">
+
+                            <div class="col-2">
                                 <label class="form-label" for="interiorImg">Interior Image</label>
                                 <input class="form-control" type="file" id="interiorImg">
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtColor">Color</label>
                                 <input type="text" class="form-control" id="txtColor" name="colour">
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtMaintainence">Maintainence</label>
                                 <input type="text" class="form-control" id="txtMaintainence" name="maintainence">
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtDate">Created On</label>
                                 <input type="date" class="form-control" id="txtDate" name="createdOn">
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="cmbTransmissionType">Transmission Type</label>
                                 <select id="cmbTransmissionType" class="form-select" name="transmissionType">
                                     <option>Auto</option>
                                     <option>Manual</option>
                                 </select>
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtStatus">Status</label>
                                 <input type="text" class="form-control" id="txtStatus" name="status">
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtFreeMileagePerDay">Free Mileage /Day</label>
                                 <input type="text" class="form-control" id="txtFreeMileagePerDay" name="freeKmPerDay">
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtFreeMileagePerMonth">Free Mileage /Month</label>
                                 <input type="text" class="form-control" id="txtFreeMileagePerMonth" name="freeKmPerMonth">
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtMonthlyRate">Monthly Rate</label>
                                 <input type="text" class="form-control" id="txtMonthlyRate" name="monthlyRate">
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtDailyRate">Daily Rate</label>
                                 <input type="text" class="form-control" id="txtDailyRate" name="dailyRate">
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtPricePerExtraKm">Price Per ExtraKm</label>
                                 <input type="text" class="form-control" id="txtPricePerExtraKm" name="pricePerExtraKm">
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="cmbNoOfPassengers">No Of Passengers</label>
                                 <select id="cmbNoOfPassengers" class="form-select" name="noOfPassengers">
                                     <option>2</option>
@@ -373,7 +350,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="cmbFuelType">Fuel Type</label>
                                 <select id="cmbFuelType" class="form-select"name="fuelType">
                                     <option>Diesel</option>
@@ -381,40 +358,136 @@
                                 </select>
                             </div>
 
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="txtCreatedBy">Created By</label>
                                 <input type="text" class="form-control" id="txtCreatedBy"name="createdBy">
                             </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-2">
                                 <label for="cmbDamageOrNot">Damaged Or Not</label>
                                 <select id="cmbDamageOrNot" class="form-select"name="damageOrNot">
                                     <option>Damaged</option>
                                     <option>Not Damaged</option>
                                 </select>
                             </div>
+                            <div class="col-2">
+                                <label for="txtCreatedBy">Car Id</label>
+                                <input type="text" class="form-control" id="txtCarId"name="carId">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group ">
+                                    <button class="btn btn-outline-danger" onclick="saveCar()" name="btnSaveCar" id="btnSaveCar" type="button">Add Car</button>
+                                    <button class="btn btn-outline-danger" onclick="updateCars()" name="btnEditCars" id="btnEditCars" type="button">Edit Car</button>
+                                    <button class="btn btn-outline-danger" onclick="deleteCars()" name="btnDeleteCars" id="btnDeleteCars" type="button">Delete Car</button>
+                                    <button class="btn btn-outline-danger" onclick="getAllCars()" name="btnGetAllCars" id="btnGetAllCars" type="button">Get All Car</button>
+                                </div>
+                            </div>
                         </div>
-
-
-                        <div class="row">
-<!--                            <button type="button" class="btn btn-outline-danger" onclick="addCarToTheLot()">Add Car To-->
-<!--                                Save-->
-<!--                            </button>-->
-                            <button class="btn btn-outline-danger" onclick="saveCar()" name="btnSaveCar" id="btnSaveCar" type="button">Add Car</button>
-                        </div>
-
                     </form>
+<!--                    <div class="col-md-6 mb-3">-->
+                        <table class="table table-success table-hover"style="margin-top: 15px;margin-left:-12px">
+                            <thead class="table table-dark">
+                            <tr>
+                                <th>Car Id</th>
+                                <th>Reg No</th>
+                                <th>Brand</th>
+                                <th>Type</th>
+                                <th>Colour</th>
+                                <th>Maintainence</th>
+                                <th>Created On</th>
+                                <th>Transmission Type</th>
+                                <th>Status</th>
+                                <th>Free Mileage/Day</th>
+                                <th>Free Mileage/Month</th>
+                                <th>Monthly Rate</th>
+                                <th>Daily Rate</th>
+                                <th>Price Per ExtraKm</th>
+                                <th>No of passengers</th>
+                                <th>Fuel Type</th>
+                                <th>Damaged Or Not</th>
+                                <th>Created By</th>
+                                <th>Front Image</th>
+                                <th>Back Image</th>
+                                <th>Side Image</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tblViewCarDetails">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
                 </section>
+
+
+
 
             </section>
 
             <!--view car content-->
             <section class="view-cars">
+<!--                <table class="table table-success table-hover">-->
+<!--                    <thead class="table table-dark">-->
+<!--                    <th>Car Id</th>-->
+<!--                    <th>Reg No</th>-->
+<!--                    <th>Brand</th>-->
+<!--                    <th>Type</th>-->
+<!--                    <th>Colour</th>-->
+<!--                    <th>Maintainence</th>-->
+<!--                    <th>Created On</th>-->
+<!--                    <th>Transmission Type</th>-->
+<!--                    <th>Status</th>-->
+<!--                    <th>Free Mileage/Day</th>-->
+<!--                    <th>Free Mileage/Month</th>-->
+<!--                    <th>Monthly Rate</th>-->
+<!--                    <th>Daily Rate</th>-->
+<!--                    <th>Price Per ExtraKm</th>-->
+<!--                    <th>No of passengers</th>-->
+<!--                    <th>Fuel Type</th>-->
+<!--                    <th>Damaged Or Not</th>-->
+<!--                    <th>Created By</th>-->
+<!--                    <th>Front Image</th>-->
+<!--                    <th>Back Image</th>-->
+<!--                    <th>Side Image</th>-->
+<!--                    <th>Interior Image</th>-->
+<!--                    <th>Edit</th>-->
+<!--                    <th>Delete</th>-->
+
+<!--                    </thead>-->
+<!--                    <tbody id="tblViewCarDetails">-->
+<!--                    </tbody>-->
+<!--                </table>-->
+
+            </section>
+
+            <!--update car content-->
+            <section class="edit-cars" style="overflow-x: scroll; overflow-y: scroll">
+
                 <table class="table table-success table-hover">
                     <thead class="table table-dark">
+                    <th>Car Id</th>
                     <th>Reg No</th>
                     <th>Brand</th>
                     <th>Type</th>
@@ -436,40 +509,38 @@
                     <th>Back Image</th>
                     <th>Side Image</th>
                     <th>Interior Image</th>
-
-                    </thead>
-                    <tbody id="tblViewCarDetails">
-
-                    </tbody>
-                </table>
-
-            </section>
-
-            <!--update car content-->
-            <section class="edit-cars" style="overflow-x: scroll; overflow-y: scroll">
-
-                <table class="table table-success table-hover">
-                    <thead class="table table-dark">
-                    <th>Reg No</th>
-                    <th>Front</th>
-                    <th>Back</th>
-                    <th>Side</th>
-                    <th>Interior</th>
-                    <th>Color</th>
-                    <th>Daily Rate</th>
-                    <th>Monthly Rate</th>
-                    <th>Free Mileage Per Day</th>
-                    <th>Free Mileage Per Month</th>
-                    <th>Price /Km</th>
                     <th>Edit</th>
-                    <th>Mark Damaged</th>
-                    <th>Add To Maintenance/<br>Mark Repaired</th>
-                    <th>Remove</th>
+                    <th>Delete</th>
                     </thead>
                     <tbody id="tblEditCars">
 
                     </tbody>
                 </table>
+
+<!--                <div class="modal" tabindex="-1">-->
+<!--                    <div class="modal-dialog">-->
+<!--                        <div class="modal-content">-->
+<!--                            <div class="modal-body">-->
+<!--                                <p>Modal body text goes here.</p>-->
+<!--                            </div>-->
+<!--                            <div class="modal-footer">-->
+<!--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                                <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+
+
+
+
+
+
+
+
+
 
             </section>
 
@@ -484,23 +555,42 @@
                     <button type="button" onclick="loadEditCarSection()" class="btneditCar" id="editCar">Edit Car Details</button>
                 </div>
             </section>
-
         </section>
 
         <!--customer content-->
         <section class="view-customers-container">
+            <section class="customer-header" style="background-color: silver">
+                <div >
+
+                    <button onclick="viewCustomers()" type="button" class="btnviewcustomers" id="viewcustomers">Requests
+                    </button>
+
+                </div>
+            </section>
             <table class="table table-success table-hover">
                 <thead class="table table-dark">
-                <th style="width: 30%">Name</th>
-                <th style="width: 10%">NIC</th>
-                <th style="width: 10%">Email</th>
-                <th style="width: 10%">Password</th>
-                <th style="width: 20%">Address</th>
-                <th style="width: 10%">Contact</th>
-                <th style="width: 20%">Verify Details
+                <th>customerId</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Address</th>
+                <th>LicenseNo</th>
+                <th>Nic</th>
+                <th>ContactNo</th>
+                <th>Verify Details
                 </thead>
                 <tbody id="tblViewCustomers">
-
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </section>
@@ -524,24 +614,19 @@
 
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
-                    <th>Rent ID</th>
-                    <th>Duration Plan</th>
-                    <th>Cus ID</th>
+                    <th>Rental RequestId</th>
+                    <th>Created On</th>
+                    <th>CustomerId</th>
+                    <th>Car Name</th>
+                    <th>Driver Name</th>
                     <th>Pickup Date</th>
                     <th>Return Date</th>
-                    <th>Pickup Venue</th>
-                    <th>Return Venue</th>
                     <th>Pickup Time</th>
                     <th>Return Time</th>
-                    <th>Driver IDs</th>
-                    <th>Driver Names</th>
-                    <th>Edit Drivers</th>
-                    <th>Car Reg No's</th>
-                    <th>Rent State</th>
-                    <th>Description</th>
-                    <th>Accept/<br>Deny</th>
+                    <th>Rental Fee</th>
+                    <th>Status</th>
                     </thead>
-                    <tbody id="viewRentalsTable">
+                    <tbody id="viewRentalTable">
 
 
                     </tbody>
@@ -631,24 +716,15 @@
                 <br>
                 <table class="table table-bordered table-hover" style="margin-top: 30px">
                     <thead class="table-dark">
-                    <th>Rent ID</th>
+                    <th>Payment Id</th>
+                    <th>Rental RequestId</th>
+                    <th>Customer Id</th>
                     <th>Customer Name</th>
-                    <th>Customerr NIC</th>
-                    <th>Pickup Date</th>
-                    <th>Return Date</th>
-                    <th>Pickup Venue</th>
-                    <th>Return Venue</th>
-                    <th>Pickup Time</th>
-                    <th>Return Time</th>
-                    <th>Driver IDs</th>
-                    <th>Driver Names</th>
-                    <th>Car Id</th>
-                    <th>Car Reg No's</th>
-                    <th>Payment Done By</th>
-                    <th>Payment Date</th>
-                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Rent Payment</th>
+                    <th>Total Payment</th>
                     </thead>
-                    <tbody id="viewRentalsTable">
+                    <tbody id="viewIncomeTable">
 
 
                     </tbody>
@@ -671,24 +747,15 @@
                 <br>
                 <table class="table table-bordered table-hover" style="margin-top: 30px">
                     <thead class="table-dark">
-                    <th>Rent ID</th>
+                    <th>Payment Id</th>
+                    <th>Rental RequestId</th>
+                    <th>Customer Id</th>
                     <th>Customer Name</th>
-                    <th>Customerr NIC</th>
-                    <th>Pickup Date</th>
-                    <th>Return Date</th>
-                    <th>Pickup Venue</th>
-                    <th>Return Venue</th>
-                    <th>Pickup Time</th>
-                    <th>Return Time</th>
-                    <th>Driver IDs</th>
-                    <th>Driver Names</th>
-                    <th>Car Id</th>
-                    <th>Car Reg No's</th>
-                    <th>Payment Done By</th>
-                    <th>Payment Date</th>
-                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Rent Payment</th>
+                    <th>Total Payment</th>
                     </thead>
-                    <tbody id="viewRentalsTable">
+                    <tbody id="viewIncomeTable1">
 
 
                     </tbody>
@@ -959,6 +1026,7 @@
     <script src="assests/js/main.js"></script>
     <script src="src/services/Car.js"></script>
     <script src="src/services/rentalRequest.js"></script>
+    <script src = "src/services/login.js"></script>
     <script src="assests/js/bootstrap.min.js"></script>
 </main>
 
