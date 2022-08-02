@@ -724,9 +724,10 @@ aside p {
 }
 
 .manage-cars-option-container {
-    background-color: red;
-    width: 1200px;
-    height: 450px;
+    background-color: mediumpurple;
+    width: 90vw;
+    height: 40vh;
+    align-self: center;
     position: absolute;
     right: 0px;
     top: 142px;
@@ -736,16 +737,16 @@ aside p {
 }
 
 .add-car {
-    width: 100%;
-    height: 100%;
-    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    /*background-color: mistyrose;*/
     border-radius: 4px;
 
 }
 
 .view-cars {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rosybrown;
     border-radius: 4px;
     display: none;
@@ -761,9 +762,9 @@ aside p {
 }
 
 .edit-cars {
-    width: 100%;
-    height: 100%;
-    background-color: #191C24;
+    width: 120vw;
+    height: 100vh;
+    background-color: mistyrose;
     border-radius: 4px;
     display: none;
     position: absolute;
@@ -780,9 +781,9 @@ aside p {
 }
 
 .view-customers-container {
-    width: 100%;
-    height: 100%;
-    background-color:#191C24;
+    width: 60%;
+    height: 60%;
+    background-color:mistyrose;
     border-radius: 4px;
     display: none;
     overflow-x: scroll;
@@ -983,6 +984,21 @@ aside p {
     border-radius: 40px;
     width: 163px;
 }
+.customer-header{
+    width: 1185px;
+    background-color: #191C24;
+    height: 100px;
+    position: relative;
+    right: -30px;
+    top: -30px;
+    left: 22px;
+    margin: auto;
+    border-radius: 4px;
+    z-index: 0;
+    box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+
+}
+
 
 .rental-container-header {
     width: 1185px;
@@ -997,6 +1013,21 @@ aside p {
     z-index: 0;
     box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%), 0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
 
+}
+.btnviewcustomers{
+    width: 148px;
+    height: 63px;
+    border: none;
+    color: white;
+    background-color:#37474f;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #313131;
+    transition: ease-out 0.3s;
+    font-size: 19px;
+    outline: none;
+    position: absolute;
+    top: 9px;
+    left: 17px;
 }
 
 .btnrequests{
@@ -1068,7 +1099,7 @@ aside p {
 .view-rentals {
     width: 100%;
     height: 100%;
-    background-color:#191C24;
+    background-color:mistyrose;
     border-radius: 4px;
     position: absolute;
     top: 117px;
@@ -1198,7 +1229,7 @@ aside p {
 .view-week-income {
     width: 100%;
     height: 100%;
-    background-color: #191C24;
+    background-color: mistyrose;
     border-radius: 4px;
     position: absolute;
     top: 117px;
@@ -1208,7 +1239,7 @@ aside p {
 .view-month-income {
     width: 100%;
     height: 100%;
-    background-color:#37474f;
+    background-color:sandybrown;
     border-radius: 4px;
     position: absolute;
     top: 117px;
