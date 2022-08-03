@@ -237,7 +237,6 @@ function manageProfile() {
     $('.customer-manage-profile-section').css({display: "block"});
 }
 
-
 function loadNewRequest() {
     $('.manage-view-request').css({display: "none"});
     $('.preview-rental-section').css({display: "none"});
