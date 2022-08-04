@@ -23,39 +23,41 @@
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
         <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
         <div class="login-form" style="margin-top: 50px">
-            <form id="loginForm" name="userForm">
-            <div class="sign-in-htm">
-                <div class="group">
-                    <label for="txtUserName" class="label">Username or Email</label>
-                    <input id="txtUserName" type="text" class="input" name="userName">
+            <form id="loginForm" name="loginForm">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="txtUserName" class="label">Username or Email</label>
+                        <input class="form-control" id="txtUserName" type="text"  name="userName">
+                    </div>
+                    <div class="group">
+                        <label for="txtPassword" class="label">Password</label>
+                        <input id="txtPassword" type="password" class="form-control" name="password">
+                    </div>
+                    <div class="group">
+                        <label for="cmbUserType" class="label">User Type</label>
+                        <select onchange="selectUserRole()" id="cmbUserType" class="form-control">
+                            <option value="1">Admin</option>
+                            <option value="2">Customer</option>
+                            <option value="3">Driver</option>
+                        </select>
+                    </div>
+
+                    <div class="group">
+                        <input onclick="login()" type="button" class="button" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
                 </div>
-                <div class="group">
-                    <label for="txtPassword" class="label">Password</label>
-                    <input id="txtPassword" type="password" class="input" data-type="password" name="password">
+                <div class="for-pwd-htm">
+                    <div class="group">
+                        <label for="user" class="label">Username or Email</label>
+                        <input id="user" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Reset Password">
+                    </div>
+                    <div class="hr"></div>
                 </div>
-                <div class="group">
-                    <label for="cmbUserType" class="label">User Type</label>
-                    <select onchange="selectUserRole()" id="cmbUserType" class="form-select">
-                        <option value="admin">1</option>
-                        <option value="customer">2</option>
-                        <option value="driver">3</option>
-                    </select>
-                </div>
-                <div class="group">
-                    <input onclick="login()" type="submit" class="button" value="Sign In">
-                </div>
-                <div class="hr"></div>
-            </div>
-            <div class="for-pwd-htm">
-                <div class="group">
-                    <label for="user" class="label">Username or Email</label>
-                    <input id="user" type="text" class="input">
-                </div>
-                <div class="group">
-                    <input type="submit" class="button" value="Reset Password">
-                </div>
-                <div class="hr"></div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
@@ -254,7 +256,7 @@
 
                 <section class="add-car container-fluid">
                     <form  enctype="multipart/form-data" id="carForm" name="carForm">
-<!--                    <form id="carForm" name="carForm">-->
+                        <!--                    <form id="carForm" name="carForm">-->
                         <div class="row">
                             <div class="col-2">
                                 <label for="txtRegistrationNo">Register No</label>
@@ -383,59 +385,59 @@
                             </div>
                         </div>
                     </form>
-<!--                    <div class="col-md-6 mb-3">-->
-                        <table class="table table-success table-hover"style="margin-top: 15px;margin-left:-12px">
-                            <thead class="table table-dark">
-                            <tr>
-                                <th>Car Id</th>
-                                <th>Reg No</th>
-                                <th>Brand</th>
-                                <th>Type</th>
-                                <th>Colour</th>
-                                <th>Maintainence</th>
-                                <th>Created On</th>
-                                <th>Transmission Type</th>
-                                <th>Status</th>
-                                <th>Free Mileage/Day</th>
-                                <th>Free Mileage/Month</th>
-                                <th>Monthly Rate</th>
-                                <th>Daily Rate</th>
-                                <th>Price Per ExtraKm</th>
-                                <th>No of passengers</th>
-                                <th>Fuel Type</th>
-                                <th>Damaged Or Not</th>
-                                <th>Created By</th>
-                                <th>Front Image</th>
-                                <th>Back Image</th>
-                                <th>Side Image</th>
-                            </tr>
-                            </thead>
-                            <tbody id="tblViewCarDetails">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                    <!--                    <div class="col-md-6 mb-3">-->
+                    <table class="table table-success table-hover"style="margin-top: 15px;margin-left:-12px">
+                        <thead class="table table-dark">
+                        <tr>
+                            <th>Car Id</th>
+                            <th>Reg No</th>
+                            <th>Brand</th>
+                            <th>Type</th>
+                            <th>Colour</th>
+                            <th>Maintainence</th>
+                            <th>Created On</th>
+                            <th>Transmission Type</th>
+                            <th>Status</th>
+                            <th>Free Mileage/Day</th>
+                            <th>Free Mileage/Month</th>
+                            <th>Monthly Rate</th>
+                            <th>Daily Rate</th>
+                            <th>Price Per ExtraKm</th>
+                            <th>No of passengers</th>
+                            <th>Fuel Type</th>
+                            <th>Damaged Or Not</th>
+                            <th>Created By</th>
+                            <th>Front Image</th>
+                            <th>Back Image</th>
+                            <th>Side Image</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblViewCarDetails">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
 
-                            </tr>
-                            </tbody>
-                        </table>
+                        </tr>
+                        </tbody>
+                    </table>
 
 
                     </div>
@@ -448,37 +450,37 @@
 
             <!--view car content-->
             <section class="view-cars">
-<!--                <table class="table table-success table-hover">-->
-<!--                    <thead class="table table-dark">-->
-<!--                    <th>Car Id</th>-->
-<!--                    <th>Reg No</th>-->
-<!--                    <th>Brand</th>-->
-<!--                    <th>Type</th>-->
-<!--                    <th>Colour</th>-->
-<!--                    <th>Maintainence</th>-->
-<!--                    <th>Created On</th>-->
-<!--                    <th>Transmission Type</th>-->
-<!--                    <th>Status</th>-->
-<!--                    <th>Free Mileage/Day</th>-->
-<!--                    <th>Free Mileage/Month</th>-->
-<!--                    <th>Monthly Rate</th>-->
-<!--                    <th>Daily Rate</th>-->
-<!--                    <th>Price Per ExtraKm</th>-->
-<!--                    <th>No of passengers</th>-->
-<!--                    <th>Fuel Type</th>-->
-<!--                    <th>Damaged Or Not</th>-->
-<!--                    <th>Created By</th>-->
-<!--                    <th>Front Image</th>-->
-<!--                    <th>Back Image</th>-->
-<!--                    <th>Side Image</th>-->
-<!--                    <th>Interior Image</th>-->
-<!--                    <th>Edit</th>-->
-<!--                    <th>Delete</th>-->
+                <!--                <table class="table table-success table-hover">-->
+                <!--                    <thead class="table table-dark">-->
+                <!--                    <th>Car Id</th>-->
+                <!--                    <th>Reg No</th>-->
+                <!--                    <th>Brand</th>-->
+                <!--                    <th>Type</th>-->
+                <!--                    <th>Colour</th>-->
+                <!--                    <th>Maintainence</th>-->
+                <!--                    <th>Created On</th>-->
+                <!--                    <th>Transmission Type</th>-->
+                <!--                    <th>Status</th>-->
+                <!--                    <th>Free Mileage/Day</th>-->
+                <!--                    <th>Free Mileage/Month</th>-->
+                <!--                    <th>Monthly Rate</th>-->
+                <!--                    <th>Daily Rate</th>-->
+                <!--                    <th>Price Per ExtraKm</th>-->
+                <!--                    <th>No of passengers</th>-->
+                <!--                    <th>Fuel Type</th>-->
+                <!--                    <th>Damaged Or Not</th>-->
+                <!--                    <th>Created By</th>-->
+                <!--                    <th>Front Image</th>-->
+                <!--                    <th>Back Image</th>-->
+                <!--                    <th>Side Image</th>-->
+                <!--                    <th>Interior Image</th>-->
+                <!--                    <th>Edit</th>-->
+                <!--                    <th>Delete</th>-->
 
-<!--                    </thead>-->
-<!--                    <tbody id="tblViewCarDetails">-->
-<!--                    </tbody>-->
-<!--                </table>-->
+                <!--                    </thead>-->
+                <!--                    <tbody id="tblViewCarDetails">-->
+                <!--                    </tbody>-->
+                <!--                </table>-->
 
             </section>
 
@@ -517,19 +519,19 @@
                     </tbody>
                 </table>
 
-<!--                <div class="modal" tabindex="-1">-->
-<!--                    <div class="modal-dialog">-->
-<!--                        <div class="modal-content">-->
-<!--                            <div class="modal-body">-->
-<!--                                <p>Modal body text goes here.</p>-->
-<!--                            </div>-->
-<!--                            <div class="modal-footer">-->
-<!--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                                <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <!--                <div class="modal" tabindex="-1">-->
+                <!--                    <div class="modal-dialog">-->
+                <!--                        <div class="modal-content">-->
+                <!--                            <div class="modal-body">-->
+                <!--                                <p>Modal body text goes here.</p>-->
+                <!--                            </div>-->
+                <!--                            <div class="modal-footer">-->
+                <!--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                <!--                                <button type="button" class="btn btn-primary">Save changes</button>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
 
 
@@ -546,7 +548,7 @@
 
             <section class="manage-cars-option-footer" >
                 <div>
-<!--                    <button class="btn btn-outline-danger" onclick="saveCar()" name="btnSaveCar" id="btnSaveCar" type="button">Add Car</button>-->
+                    <!--                    <button class="btn btn-outline-danger" onclick="saveCar()" name="btnSaveCar" id="btnSaveCar" type="button">Add Car</button>-->
 
                     <button type="button" onclick="loadNewCarSection()"  class="btnaddCar" id="addCar">Add New Car</button>
                     &nbsp
@@ -939,7 +941,8 @@
 
         <!--profile content=-->
         <section class="customer-manage-profile-section">
-            <form enctype="multipart/form-data" >
+            <!--            <form enctype="multipart/form-data" >-->
+            <form id="profile-form" name="profile-form">
                 <div class="row">
                     <div class="col-lg-6">
                         <label for="txtCusName">Customer Name</label>

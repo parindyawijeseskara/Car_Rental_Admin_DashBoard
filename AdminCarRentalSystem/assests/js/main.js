@@ -1,6 +1,8 @@
 
 var baseUrl = "http://localhost:8080/CarRentalSystem_war_exploded/api/v1";
 
+var userId = 0;
+
 function manageCars() {
     $('.main-dashboard-container>section').css({display: "none"});
     $('.cars-container').css({display: "block"});
@@ -115,17 +117,19 @@ function loadDashboard() {
 }
 
 function selectUserRole() {
-    var x = document.getElementById("type").value;
-    if (x === "admin"){
+    var x = document.getElementById("cmbUserType").value;
+    console.log(x)
+    if (x === "1"){
         $('.admin-dashboard').css({display: "block"});
     }
 
-    if (x === "customer"){
+    if (x === "2"){
         $('.admin-dashboard').css({display: "none"});
     }
 }
 
 function  login() {
+    console.log("-----")
     $('.main').css({display: "block"});
     $('.header').css({display: "block"});
     $('.login-wrap').css({display: "none"});
@@ -133,54 +137,82 @@ function  login() {
     $('.cars-container').css({display: "none"});
     $('.rental-container').css({display: "none"});
 
-    var x = document.getElementById("type").value;
-    if (x === "admin"){
+    var x = document.getElementById("cmbUserType").value;
+    if (x === "1"){
         $('.side-panel-container').css({display: "block"});
         $('.admin-dashboard').css({display: "block"});
         $('.main-dashboard-container>section').css({display: "block"});
     }
 
-    if (x === "customer"){
+    if (x === "2"){
+        // var login ={
+        //     userName:$("#txtUserName").val(),
+        //     password:$("#txtPassword").val(),
+        //     userTypeId:$("#cmbUserType").val()
+        // }
+        //
+        // console.log(login);
+        // var data = $("#loginForm").serialize();
+        //
+        // $.ajax({
+        //     url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/user_registration/getUserInLogging",
+        //     method: "POST",
+        //     contentType: "application/json",
+        //     data:JSON.stringify(login),
+        //     success:function (resp) {
+        //         console.log(resp.data.userId);
+        //         if (resp.code == 200) {
+        //             userId = resp.data.userId;
+        //             alert("User Logged successfully..!");
+        //         }
+        //
+        //     },
+        //     error: function (ob) {
+        //         alert(ob.responseJSON.message);
+        //     }
+        // });
         $('.side-panel-container-customer').css({display: "block"});
         $('.customer-dashboard').css({display: "block"});
         $('.customer-dashboard-container').css({display: "block"});
         $('.side-panel-container-driver').css({display: "none"});
     }
 
-    if (x === "driver"){
+    if (x === "3"){
         $('.side-panel-container-driver').css({display: "block"});
         $('.driver-dashboard').css({display: "block"});
         $('.driver-dashboard-container').css({display: "block"});
     }
 
-
-    var userId = 0;
-
-    function login() {
-        var login ={
-            userName:$("txtUserName").val(),
-            password:$("txtPassword").val(),
-            userTypeId:$("cmbUserType").val()
-        }
-
-
-        var data = $("#loginForm").serialize();
-
-        $.ajax({
-            url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/user_registration/getUserInLogging",
-            method: "POST",
-            contentType: "application/json",
-            data:JSON.stringify(login),
-            success:function (resp) {
-                console.log(resp.data.userId);
-
-            },
-            error: function (ob) {
-                alert(ob.responseJSON.message);
-            }
-        });
-
+    console.log("///")
+    var login ={
+        // userName:document.getElementById("txtUserName").val(),
+        // password:document.getElementById("txtPassword").val(),
+        // userTypeId:document.getElementById("cmbUserType").val()
+        userName:$("#txtUserName").val(),
+        password:$("#txtPassword").val(),
+        userTypeId:$("#cmbUserType").val()
     }
+
+    console.log(login);
+    var data = $("#loginForm").serialize();
+
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/user_registration/getUserInLogging",
+        method: "POST",
+        contentType: "application/json",
+        data:JSON.stringify(login),
+        success:function (resp) {
+            console.log(resp.data.userId);
+            if (resp.code == 200) {
+                userId = resp.data.userId;
+                alert("User Logged successfully..!");
+            }
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
 function loadViewCarSection() {
@@ -235,7 +267,45 @@ function manageRequests() {
 function manageProfile() {
     $('.main-dashboard-container>section').css({display: "none"});
     $('.customer-manage-profile-section').css({display: "block"});
+
+    var log ={
+        //get values from textfields
+        userName:$("txtUserName").val(),
+    }
+    var data = $("#profile-form").serialize();
+
+    $.ajax({
+        url: "http://localhost:8080/CarRentalSystem_war_exploded/api/v1/user_registration/getUserByUserId/"+userId,
+        method: "Get",
+        contentType: "application/json",
+        //data:JSON.stringify(login),
+        success:function (resp) {
+            console.log(resp.data.userId);
+            if (resp.code == 200) {
+                //set values to text fields
+                $("#txtCusName").val(resp.data.userName);
+                $("#txtEmail").val(resp.data.email);
+                $("#password").val(resp.data.password);
+                $("#address").val(resp.data.address);
+                $("#liscenceNo").val(resp.data.licenseNo);
+                $("#nic").val(resp.data.nic)
+                $("#contactNo").val(resp.data.contactNo)
+
+            }
+
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+
+
+
+
+
 }
+
 
 function loadNewRequest() {
     $('.manage-view-request').css({display: "none"});
